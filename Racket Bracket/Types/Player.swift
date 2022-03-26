@@ -8,7 +8,8 @@
 import SwiftUI
 
 fileprivate struct PlayerArchiverKeys {
-    static let name = "name"
+    static let firstName = "firstName"
+    static let lastName = "lastName"
     static let rank = "rank"
     static let matches = "match"
 }
@@ -17,9 +18,15 @@ class Player: NSObject, Identifiable, ObservableObject {
     // MARK: - Properties
     internal let id = UUID()
     
-    var name: String
+    @Published var firstName: String
+    @Published var lastName: String
+    
+    var fullName: String {
+        "\(firstName) \(lastName)"
+    }
+    
     @ObservedObject var rank: Rank
-    var matches: [Match]
+    @Published var matches: [Match]
     
     var matchesWon: [Match] {
         matches.filter { $0.winner == self }
@@ -30,14 +37,16 @@ class Player: NSObject, Identifiable, ObservableObject {
     }
     
     // MARK: - init
-    init(name: String, rank: Rank, matches: [Match]) {
-        self.name = name
+    init(firstName: String, lastName: String, rank: Rank, matches: [Match]) {
+        self.firstName = firstName
+        self.lastName = lastName
         self.rank = rank
         self.matches = matches
     }
     
     required init(coder decoder: NSCoder) {
-        self.name = decoder.decodeObject(forKey: PlayerArchiverKeys.name) as? String ?? ""
+        self.firstName = decoder.decodeObject(forKey: PlayerArchiverKeys.firstName) as? String ?? ""
+        self.lastName = decoder.decodeObject(forKey: PlayerArchiverKeys.lastName) as? String ?? ""
         self.matches = decoder.decodeObject(forKey: PlayerArchiverKeys.matches) as? [Match] ?? []
         self.rank = decoder.decodeObject(forKey: PlayerArchiverKeys.rank) as? Rank ?? Rank(value: 0, rawScore: 0)
     }
@@ -45,18 +54,31 @@ class Player: NSObject, Identifiable, ObservableObject {
 
 // MARK: - Mock Players
 extension Player {
-    static func mockPlayer() -> Player {
-        return Player(
-            name: String(Int.random(in: 1...1000000000)),
+    static func mockPlayer(addMatch: Bool = true) -> Player {
+        let player = Player(
+            firstName: String(Int.random(in: 1...100)),
+            lastName: String(Int.random(in: 1...10000)),
             rank: Rank(value: 0, rawScore: 0),
             matches: [])
+        
+        if addMatch {
+            player.matches.append(Match.mockRegularMatch(winner: player))
+            player.matches.append(Match.mockChallengeMatch(winner: player))
+            player.matches.append(Match.mockRegularMatch(loser: player))
+            player.matches.append(Match.mockChallengeMatch(winner: player))
+            player.matches.append(Match.mockChallengeMatch(loser: player))
+            player.matches.append(Match.mockRegularMatch(winner: player))
+        }
+        
+        return player
     }
 }
 
 // MARK: - Archiving
 extension Player: NSCoding {
     func encode(with coder: NSCoder) {
-        coder.encode(name, forKey: PlayerArchiverKeys.name)
+        coder.encode(firstName, forKey: PlayerArchiverKeys.firstName)
+        coder.encode(lastName, forKey: PlayerArchiverKeys.lastName)
         coder.encode(rank, forKey: PlayerArchiverKeys.rank)
         coder.encode(matches, forKey: PlayerArchiverKeys.matches)
     }

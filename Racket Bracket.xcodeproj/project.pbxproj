@@ -23,7 +23,6 @@
 		207A419D27E28DD000BAC1A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 207A419C27E28DD000BAC1A1 /* Preview Assets.xcassets */; };
 		207A41A727E28DD000BAC1A1 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41A627E28DD000BAC1A1 /* BaseTest.swift */; };
 		207A41B127E28DD000BAC1A1 /* Racket_BracketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41B027E28DD000BAC1A1 /* Racket_BracketUITests.swift */; };
-		207A41B327E28DD000BAC1A1 /* Racket_BracketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41B227E28DD000BAC1A1 /* Racket_BracketUITestsLaunchTests.swift */; };
 		207A41C827E28E3000BAC1A1 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C027E28E3000BAC1A1 /* IntExtensions.swift */; };
 		207A41C927E28E3000BAC1A1 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C227E28E3000BAC1A1 /* PlayerModel.swift */; };
 		207A41CA27E28E3000BAC1A1 /* RankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C327E28E3000BAC1A1 /* RankingModel.swift */; };
@@ -37,6 +36,12 @@
 		20AF10DA27E4FBFA0081EC07 /* SelectPlayerSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF10D927E4FBFA0081EC07 /* SelectPlayerSectionView.swift */; };
 		20AF10DE27E502F30081EC07 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF10DD27E502F30081EC07 /* ViewExtensions.swift */; };
 		20B2E6BB27E6757300EE9120 /* SetScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2E6BA27E6757300EE9120 /* SetScoreView.swift */; };
+		20D023DB27EEAEA6000FDEF0 /* PlayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D023DA27EEAEA6000FDEF0 /* PlayerDetailView.swift */; };
+		20D023DD27EECDD1000FDEF0 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D023DC27EECDD1000FDEF0 /* ProgressBar.swift */; };
+		20D023DF27EECF02000FDEF0 /* PlayerWinLoseRationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D023DE27EECF02000FDEF0 /* PlayerWinLoseRationView.swift */; };
+		20D023E227EED37A000FDEF0 /* OverlaySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D023E127EED37A000FDEF0 /* OverlaySheetView.swift */; };
+		20D023E527EEE2AB000FDEF0 /* MatchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D023E427EEE2AB000FDEF0 /* MatchRowView.swift */; };
+		20D023E727EEE5D0000FDEF0 /* RankChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D023E627EEE5D0000FDEF0 /* RankChange.swift */; };
 		20F97A9727E2EFAE00CECF56 /* RankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F97A9627E2EFAE00CECF56 /* RankingTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -77,7 +82,6 @@
 		207A41A627E28DD000BAC1A1 /* BaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
 		207A41AC27E28DD000BAC1A1 /* Racket BracketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Racket BracketUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		207A41B027E28DD000BAC1A1 /* Racket_BracketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racket_BracketUITests.swift; sourceTree = "<group>"; };
-		207A41B227E28DD000BAC1A1 /* Racket_BracketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racket_BracketUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		207A41C027E28E3000BAC1A1 /* IntExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
 		207A41C227E28E3000BAC1A1 /* PlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
 		207A41C327E28E3000BAC1A1 /* RankingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingModel.swift; sourceTree = "<group>"; };
@@ -91,6 +95,12 @@
 		20AF10D927E4FBFA0081EC07 /* SelectPlayerSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayerSectionView.swift; sourceTree = "<group>"; };
 		20AF10DD27E502F30081EC07 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		20B2E6BA27E6757300EE9120 /* SetScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetScoreView.swift; sourceTree = "<group>"; };
+		20D023DA27EEAEA6000FDEF0 /* PlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailView.swift; sourceTree = "<group>"; };
+		20D023DC27EECDD1000FDEF0 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		20D023DE27EECF02000FDEF0 /* PlayerWinLoseRationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerWinLoseRationView.swift; sourceTree = "<group>"; };
+		20D023E127EED37A000FDEF0 /* OverlaySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlaySheetView.swift; sourceTree = "<group>"; };
+		20D023E427EEE2AB000FDEF0 /* MatchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRowView.swift; sourceTree = "<group>"; };
+		20D023E627EEE5D0000FDEF0 /* RankChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankChange.swift; sourceTree = "<group>"; };
 		20F97A9627E2EFAE00CECF56 /* RankingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,6 +133,8 @@
 			isa = PBXGroup;
 			children = (
 				2079FE0F27E43ADC00F2DF19 /* AddContent */,
+				20D023E327EEE2A1000FDEF0 /* Match */,
+				20D023E027EED36D000FDEF0 /* OverlaySheet */,
 				2079FE0C27E43A0000F2DF19 /* Player */,
 				2079FE1E27E4463300F2DF19 /* Shared */,
 			);
@@ -132,8 +144,10 @@
 		2079FE0C27E43A0000F2DF19 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				20D023DA27EEAEA6000FDEF0 /* PlayerDetailView.swift */,
 				2079FE0D27E43A0A00F2DF19 /* PlayerListView.swift */,
 				2076BAA627E3D31A0032B942 /* PlayerRowView.swift */,
+				20D023DE27EECF02000FDEF0 /* PlayerWinLoseRationView.swift */,
 				20AF10D927E4FBFA0081EC07 /* SelectPlayerSectionView.swift */,
 			);
 			path = Player;
@@ -164,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				20AF10D727E4EC210081EC07 /* Checkbox.swift */,
+				20D023DC27EECDD1000FDEF0 /* ProgressBar.swift */,
+				20D023E627EEE5D0000FDEF0 /* RankChange.swift */,
 				2010E79C27E44DD700D736A0 /* RoundedButton.swift */,
 				2079FE1F27E4464900F2DF19 /* RoundedTextField.swift */,
 			);
@@ -226,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				207A41B027E28DD000BAC1A1 /* Racket_BracketUITests.swift */,
-				207A41B227E28DD000BAC1A1 /* Racket_BracketUITestsLaunchTests.swift */,
 			);
 			path = "Racket BracketUITests";
 			sourceTree = "<group>";
@@ -269,6 +284,22 @@
 				20B2E6BA27E6757300EE9120 /* SetScoreView.swift */,
 			);
 			path = NewMatch;
+			sourceTree = "<group>";
+		};
+		20D023E027EED36D000FDEF0 /* OverlaySheet */ = {
+			isa = PBXGroup;
+			children = (
+				20D023E127EED37A000FDEF0 /* OverlaySheetView.swift */,
+			);
+			path = OverlaySheet;
+			sourceTree = "<group>";
+		};
+		20D023E327EEE2A1000FDEF0 /* Match */ = {
+			isa = PBXGroup;
+			children = (
+				20D023E427EEE2AB000FDEF0 /* MatchRowView.swift */,
+			);
+			path = Match;
 			sourceTree = "<group>";
 		};
 		20F97A9427E2EF9C00CECF56 /* Base */ = {
@@ -411,6 +442,7 @@
 			files = (
 				2079FE1C27E4458200F2DF19 /* NewPlayerView.swift in Sources */,
 				2079FE2027E4464900F2DF19 /* RoundedTextField.swift in Sources */,
+				20D023DF27EECF02000FDEF0 /* PlayerWinLoseRationView.swift in Sources */,
 				207A41C827E28E3000BAC1A1 /* IntExtensions.swift in Sources */,
 				207A419827E28DCF00BAC1A1 /* ContentView.swift in Sources */,
 				20AF10D827E4EC210081EC07 /* Checkbox.swift in Sources */,
@@ -427,12 +459,17 @@
 				20AF10D627E4EA4B0081EC07 /* AddRegularMatchView.swift in Sources */,
 				20AF10D127E4E9A60081EC07 /* NewMatchView.swift in Sources */,
 				2079FE0E27E43A0A00F2DF19 /* PlayerListView.swift in Sources */,
+				20D023E227EED37A000FDEF0 /* OverlaySheetView.swift in Sources */,
 				2010E79D27E44DD700D736A0 /* RoundedButton.swift in Sources */,
+				20D023E527EEE2AB000FDEF0 /* MatchRowView.swift in Sources */,
 				20AF10DA27E4FBFA0081EC07 /* SelectPlayerSectionView.swift in Sources */,
 				2079FE1A27E440D600F2DF19 /* ColorExtensions.swift in Sources */,
 				207A41C927E28E3000BAC1A1 /* PlayerModel.swift in Sources */,
+				20D023DD27EECDD1000FDEF0 /* ProgressBar.swift in Sources */,
+				20D023E727EEE5D0000FDEF0 /* RankChange.swift in Sources */,
 				207A419627E28DCF00BAC1A1 /* Racket_BracketApp.swift in Sources */,
 				20AF10D427E4EA450081EC07 /* AddChallengeMatchView.swift in Sources */,
+				20D023DB27EEAEA6000FDEF0 /* PlayerDetailView.swift in Sources */,
 				207A41CC27E28E3000BAC1A1 /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,7 +488,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				207A41B127E28DD000BAC1A1 /* Racket_BracketUITests.swift in Sources */,
-				207A41B327E28DD000BAC1A1 /* Racket_BracketUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -593,7 +629,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Racket Bracket/Preview Content\"";
-				DEVELOPMENT_TEAM = LDP4JU492S;
+				DEVELOPMENT_TEAM = 2BTUXF52SG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -622,7 +658,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Racket Bracket/Preview Content\"";
-				DEVELOPMENT_TEAM = LDP4JU492S;
+				DEVELOPMENT_TEAM = 2BTUXF52SG;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

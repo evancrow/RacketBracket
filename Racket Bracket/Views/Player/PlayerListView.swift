@@ -42,12 +42,20 @@ struct PlayerListView: View {
                 }.onDelete(perform: delete).id(UUID())
             }
         }.useEffect(deps: nameFilter) { _ in
-            filteredPlayers = playerModel.playersRanked.filter { $0.name.contains(nameFilter) || nameFilter.isEmpty || !selectMode }
+            updateFilteredPlayers()
+        }.onChange(of: playerModel.players) { _ in
+            updateFilteredPlayers()
         }
     }
     
     private func delete(with indexSet: IndexSet) {
         indexSet.forEach { playerModel.players.remove(at: $0) }
+    }
+    
+    private func updateFilteredPlayers() {
+        filteredPlayers = playerModel.playersRanked.filter {
+            $0.fullName.contains(nameFilter) || nameFilter.isEmpty || !selectMode
+        }
     }
 }
 

@@ -21,7 +21,9 @@ enum MatchType: String {
     case regular = "regular"
 }
 
-class Match: NSObject {
+class Match: NSObject, Identifiable {
+    internal let id = UUID()
+    
     let date: Date
     let winner: Player?
     let loser: Player?
@@ -68,5 +70,24 @@ extension Match: NSCoding {
         coder.encode(matchType.rawValue, forKey: MatchArchiverKeys.matchType)
         coder.encode(setScore.0, forKey: MatchArchiverKeys.setScoreWinner)
         coder.encode(setScore.1, forKey: MatchArchiverKeys.setScoreLoser)
+    }
+}
+
+// MARK: - Mock Matches
+extension Match {
+    static func mockChallengeMatch(winner: Player? = nil, loser: Player? = nil) -> Match {
+        return Match(
+            winner: winner ?? Player.mockPlayer(addMatch: false),
+            loser: loser ?? Player.mockPlayer(addMatch: false),
+            matchType: .challenge,
+            setScore: (8, 6))
+    }
+    
+    static func mockRegularMatch(winner: Player? = nil, loser: Player? = nil) -> Match {
+        return Match(
+            winner: winner ?? Player.mockPlayer(addMatch: false),
+            loser: loser ?? Player.mockPlayer(addMatch: false),
+            matchType: .regular,
+            setScore: (8, 6))
     }
 }

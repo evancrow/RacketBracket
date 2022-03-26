@@ -18,8 +18,15 @@ struct ContentView: View {
         ZStack {
             NavigationView {
                 VStack {
-                    PlayerListView()
-                        .navigationTitle("Players")
+                    PlayerListView() { selectedPlayer in
+                        playerModel.detailPlayer = selectedPlayer
+                    } .navigationTitle("Players")
+                    
+                    NavigationLink(isActive: $playerModel.showPlayerDetailView) {
+                        if let player = playerModel.detailPlayer {
+                            PlayerDetailView(player: player)
+                        }
+                    } label: { EmptyView() }
 
                     NavigationLink(isActive: $showNewPlayerView) {
                         NewPlayerView()
@@ -36,7 +43,7 @@ struct ContentView: View {
             }
 
             if !showNewPlayerView && !showNewChallengeMatchView &&
-                !showNewRegularMatchView {
+                !showNewRegularMatchView && !playerModel.showPlayerDetailView {
                 AddButtonArrayView() { action in
                     switch action {
                     case .addChallengeMatch:

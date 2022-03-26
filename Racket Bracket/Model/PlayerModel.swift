@@ -15,9 +15,24 @@ class PlayerModel: NSObject, ObservableObject {
             savePlayers()
         }
     }
+    
+    @Published var detailPlayer: Player? {
+        didSet {
+            if detailPlayer != nil {
+                showPlayerDetailView = true
+            }
+        }
+    }
+    @Published var showPlayerDetailView = false {
+        didSet {
+            if !showPlayerDetailView {
+                detailPlayer = nil
+            }
+        }
+    }
 
     var playersRanked: [Player] {
-        players.sorted { $0.rank.value < $1.rank.value }
+        players.sorted { $0.rank.rawScore > $1.rank.rawScore }
     }
 
     // MARK: - Public Methods
@@ -25,14 +40,14 @@ class PlayerModel: NSObject, ObservableObject {
         let filteredPlayers = playersRanked.filter { !excluding.contains($0) }
         
         if let filteringName = filteringName, !filteringName.isEmpty {
-            return filteredPlayers.filter { $0.name.contains(filteringName) }
+            return filteredPlayers.filter { $0.fullName.contains(filteringName) }
         }
         
         return filteredPlayers
     }
 
-    public func addPlayer(with name: String) {
-        players.append(Player(name: name, rank: Rank(value: 0, rawScore: 0), matches: []))
+    public func addPlayer(with firstName: String, lastName: String) {
+        players.append(Player(firstName: firstName, lastName: lastName, rank: Rank(value: 0, rawScore: 0), matches: []))
     }
 
     // MARK: - Data Storage

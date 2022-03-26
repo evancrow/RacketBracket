@@ -13,7 +13,7 @@ struct PlayerRowView: View {
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(player.name)
+                Text(player.fullName)
                     .font(.title)
                     .fontWeight(.bold)
                 

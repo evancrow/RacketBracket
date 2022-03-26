@@ -31,6 +31,24 @@ class RankingModel {
         match.loser?.rank.rawScore += loserPoints
         match.loser?.matches.append(match)
         
+        updateRanks(playerModel: playerModel)
+    }
+    
+    public func delete(match: Match, playerModel: PlayerModel) {
+        // Adjust the players ranks to before the match.
+        let winnerPoints = caluclatePoints(with: match, forWin: true)
+        let loserPoints = caluclatePoints(with: match, forWin: false)
+       
+        match.winner?.rank.rawScore -= winnerPoints
+        match.winner?.matches.removeAll { $0 == match }
+        
+        match.loser?.rank.rawScore -= loserPoints
+        match.loser?.matches.removeAll { $0 == match }
+        
+       updateRanks(playerModel: playerModel)
+    }
+    
+    private func updateRanks(playerModel: PlayerModel) {
         // Update all the players ranking with the new scores.
         // The more points a player has, the higher ranked they are.
         let playersRanked = playerModel.players.sorted { $0.rank.rawScore > $1.rank.rawScore }
@@ -42,8 +60,9 @@ class RankingModel {
         playerModel.savePlayers()
     }
 
+
     // MARK: - Calculating Points
-    private func caluclatePoints(with match: Match, forWin: Bool) -> Int {
+    public func caluclatePoints(with match: Match, forWin: Bool) -> Int {
         let winner = match.winner
         let loser = match.loser
         let pointsForRank = calculatePointsForRank(winner: winner, loser: loser)
