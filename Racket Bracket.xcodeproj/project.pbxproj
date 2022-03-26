@@ -1,0 +1,764 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2010E79D27E44DD700D736A0 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010E79C27E44DD700D736A0 /* RoundedButton.swift */; };
+		2076BAA727E3D31A0032B942 /* PlayerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076BAA627E3D31A0032B942 /* PlayerRowView.swift */; };
+		2079FE0E27E43A0A00F2DF19 /* PlayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079FE0D27E43A0A00F2DF19 /* PlayerListView.swift */; };
+		2079FE1127E43AEF00F2DF19 /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079FE1027E43AEF00F2DF19 /* AddButtonView.swift */; };
+		2079FE1427E43B2100F2DF19 /* AddButtonUX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079FE1327E43B2100F2DF19 /* AddButtonUX.swift */; };
+		2079FE1627E43B2A00F2DF19 /* AddButtonConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079FE1527E43B2A00F2DF19 /* AddButtonConfig.swift */; };
+		2079FE1827E43F7300F2DF19 /* AddButtonArrayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079FE1727E43F7300F2DF19 /* AddButtonArrayView.swift */; };
+		2079FE1A27E440D600F2DF19 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079FE1927E440D600F2DF19 /* ColorExtensions.swift */; };
+		2079FE1C27E4458200F2DF19 /* NewPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079FE1B27E4458200F2DF19 /* NewPlayerView.swift */; };
+		2079FE2027E4464900F2DF19 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079FE1F27E4464900F2DF19 /* RoundedTextField.swift */; };
+		207A419627E28DCF00BAC1A1 /* Racket_BracketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A419527E28DCF00BAC1A1 /* Racket_BracketApp.swift */; };
+		207A419827E28DCF00BAC1A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A419727E28DCF00BAC1A1 /* ContentView.swift */; };
+		207A419A27E28DD000BAC1A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 207A419927E28DD000BAC1A1 /* Assets.xcassets */; };
+		207A419D27E28DD000BAC1A1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 207A419C27E28DD000BAC1A1 /* Preview Assets.xcassets */; };
+		207A41A727E28DD000BAC1A1 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41A627E28DD000BAC1A1 /* BaseTest.swift */; };
+		207A41B127E28DD000BAC1A1 /* Racket_BracketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41B027E28DD000BAC1A1 /* Racket_BracketUITests.swift */; };
+		207A41B327E28DD000BAC1A1 /* Racket_BracketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41B227E28DD000BAC1A1 /* Racket_BracketUITestsLaunchTests.swift */; };
+		207A41C827E28E3000BAC1A1 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C027E28E3000BAC1A1 /* IntExtensions.swift */; };
+		207A41C927E28E3000BAC1A1 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C227E28E3000BAC1A1 /* PlayerModel.swift */; };
+		207A41CA27E28E3000BAC1A1 /* RankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C327E28E3000BAC1A1 /* RankingModel.swift */; };
+		207A41CB27E28E3000BAC1A1 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C527E28E3000BAC1A1 /* Rank.swift */; };
+		207A41CC27E28E3000BAC1A1 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C627E28E3000BAC1A1 /* Match.swift */; };
+		207A41CD27E28E3000BAC1A1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C727E28E3000BAC1A1 /* Player.swift */; };
+		20AF10D127E4E9A60081EC07 /* NewMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF10D027E4E9A60081EC07 /* NewMatchView.swift */; };
+		20AF10D427E4EA450081EC07 /* AddChallengeMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF10D327E4EA450081EC07 /* AddChallengeMatchView.swift */; };
+		20AF10D627E4EA4B0081EC07 /* AddRegularMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF10D527E4EA4B0081EC07 /* AddRegularMatchView.swift */; };
+		20AF10D827E4EC210081EC07 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF10D727E4EC210081EC07 /* Checkbox.swift */; };
+		20AF10DA27E4FBFA0081EC07 /* SelectPlayerSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF10D927E4FBFA0081EC07 /* SelectPlayerSectionView.swift */; };
+		20AF10DE27E502F30081EC07 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF10DD27E502F30081EC07 /* ViewExtensions.swift */; };
+		20B2E6BB27E6757300EE9120 /* SetScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2E6BA27E6757300EE9120 /* SetScoreView.swift */; };
+		20F97A9727E2EFAE00CECF56 /* RankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F97A9627E2EFAE00CECF56 /* RankingTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		207A41A327E28DD000BAC1A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 207A418A27E28DCF00BAC1A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 207A419127E28DCF00BAC1A1;
+			remoteInfo = "Racket Bracket";
+		};
+		207A41AD27E28DD000BAC1A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 207A418A27E28DCF00BAC1A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 207A419127E28DCF00BAC1A1;
+			remoteInfo = "Racket Bracket";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2010E79C27E44DD700D736A0 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		2076BAA627E3D31A0032B942 /* PlayerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRowView.swift; sourceTree = "<group>"; };
+		2079FE0D27E43A0A00F2DF19 /* PlayerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListView.swift; sourceTree = "<group>"; };
+		2079FE1027E43AEF00F2DF19 /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
+		2079FE1327E43B2100F2DF19 /* AddButtonUX.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonUX.swift; sourceTree = "<group>"; };
+		2079FE1527E43B2A00F2DF19 /* AddButtonConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonConfig.swift; sourceTree = "<group>"; };
+		2079FE1727E43F7300F2DF19 /* AddButtonArrayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonArrayView.swift; sourceTree = "<group>"; };
+		2079FE1927E440D600F2DF19 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
+		2079FE1B27E4458200F2DF19 /* NewPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlayerView.swift; sourceTree = "<group>"; };
+		2079FE1F27E4464900F2DF19 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
+		207A419227E28DCF00BAC1A1 /* Racket Bracket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Racket Bracket.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		207A419527E28DCF00BAC1A1 /* Racket_BracketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racket_BracketApp.swift; sourceTree = "<group>"; };
+		207A419727E28DCF00BAC1A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		207A419927E28DD000BAC1A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		207A419C27E28DD000BAC1A1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		207A41A227E28DD000BAC1A1 /* Racket BracketTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Racket BracketTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		207A41A627E28DD000BAC1A1 /* BaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTest.swift; sourceTree = "<group>"; };
+		207A41AC27E28DD000BAC1A1 /* Racket BracketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Racket BracketUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		207A41B027E28DD000BAC1A1 /* Racket_BracketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racket_BracketUITests.swift; sourceTree = "<group>"; };
+		207A41B227E28DD000BAC1A1 /* Racket_BracketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racket_BracketUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		207A41C027E28E3000BAC1A1 /* IntExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
+		207A41C227E28E3000BAC1A1 /* PlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		207A41C327E28E3000BAC1A1 /* RankingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingModel.swift; sourceTree = "<group>"; };
+		207A41C527E28E3000BAC1A1 /* Rank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
+		207A41C627E28E3000BAC1A1 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		207A41C727E28E3000BAC1A1 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		20AF10D027E4E9A60081EC07 /* NewMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchView.swift; sourceTree = "<group>"; };
+		20AF10D327E4EA450081EC07 /* AddChallengeMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChallengeMatchView.swift; sourceTree = "<group>"; };
+		20AF10D527E4EA4B0081EC07 /* AddRegularMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegularMatchView.swift; sourceTree = "<group>"; };
+		20AF10D727E4EC210081EC07 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		20AF10D927E4FBFA0081EC07 /* SelectPlayerSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayerSectionView.swift; sourceTree = "<group>"; };
+		20AF10DD27E502F30081EC07 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		20B2E6BA27E6757300EE9120 /* SetScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetScoreView.swift; sourceTree = "<group>"; };
+		20F97A9627E2EFAE00CECF56 /* RankingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		207A418F27E28DCF00BAC1A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		207A419F27E28DD000BAC1A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		207A41A927E28DD000BAC1A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2076BAA527E3D27C0032B942 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2079FE0F27E43ADC00F2DF19 /* AddContent */,
+				2079FE0C27E43A0000F2DF19 /* Player */,
+				2079FE1E27E4463300F2DF19 /* Shared */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		2079FE0C27E43A0000F2DF19 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				2079FE0D27E43A0A00F2DF19 /* PlayerListView.swift */,
+				2076BAA627E3D31A0032B942 /* PlayerRowView.swift */,
+				20AF10D927E4FBFA0081EC07 /* SelectPlayerSectionView.swift */,
+			);
+			path = Player;
+			sourceTree = "<group>";
+		};
+		2079FE0F27E43ADC00F2DF19 /* AddContent */ = {
+			isa = PBXGroup;
+			children = (
+				2079FE1227E43B1300F2DF19 /* AddButton */,
+				20AF10D227E4EA340081EC07 /* NewMatch */,
+				2079FE1B27E4458200F2DF19 /* NewPlayerView.swift */,
+			);
+			path = AddContent;
+			sourceTree = "<group>";
+		};
+		2079FE1227E43B1300F2DF19 /* AddButton */ = {
+			isa = PBXGroup;
+			children = (
+				2079FE1727E43F7300F2DF19 /* AddButtonArrayView.swift */,
+				2079FE1027E43AEF00F2DF19 /* AddButtonView.swift */,
+				2079FE1527E43B2A00F2DF19 /* AddButtonConfig.swift */,
+				2079FE1327E43B2100F2DF19 /* AddButtonUX.swift */,
+			);
+			path = AddButton;
+			sourceTree = "<group>";
+		};
+		2079FE1E27E4463300F2DF19 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				20AF10D727E4EC210081EC07 /* Checkbox.swift */,
+				2010E79C27E44DD700D736A0 /* RoundedButton.swift */,
+				2079FE1F27E4464900F2DF19 /* RoundedTextField.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		207A418927E28DCF00BAC1A1 = {
+			isa = PBXGroup;
+			children = (
+				207A419427E28DCF00BAC1A1 /* Racket Bracket */,
+				207A41A527E28DD000BAC1A1 /* Racket BracketTests */,
+				207A41AF27E28DD000BAC1A1 /* Racket BracketUITests */,
+				207A419327E28DCF00BAC1A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		207A419327E28DCF00BAC1A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				207A419227E28DCF00BAC1A1 /* Racket Bracket.app */,
+				207A41A227E28DD000BAC1A1 /* Racket BracketTests.xctest */,
+				207A41AC27E28DD000BAC1A1 /* Racket BracketUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		207A419427E28DCF00BAC1A1 /* Racket Bracket */ = {
+			isa = PBXGroup;
+			children = (
+				207A419527E28DCF00BAC1A1 /* Racket_BracketApp.swift */,
+				207A419727E28DCF00BAC1A1 /* ContentView.swift */,
+				207A419927E28DD000BAC1A1 /* Assets.xcassets */,
+				207A41BF27E28E3000BAC1A1 /* Extensions */,
+				207A41C127E28E3000BAC1A1 /* Model */,
+				207A41C427E28E3000BAC1A1 /* Types */,
+				2076BAA527E3D27C0032B942 /* Views */,
+				207A419B27E28DD000BAC1A1 /* Preview Content */,
+			);
+			path = "Racket Bracket";
+			sourceTree = "<group>";
+		};
+		207A419B27E28DD000BAC1A1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				207A419C27E28DD000BAC1A1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		207A41A527E28DD000BAC1A1 /* Racket BracketTests */ = {
+			isa = PBXGroup;
+			children = (
+				20F97A9427E2EF9C00CECF56 /* Base */,
+				20F97A9627E2EFAE00CECF56 /* RankingTests.swift */,
+			);
+			path = "Racket BracketTests";
+			sourceTree = "<group>";
+		};
+		207A41AF27E28DD000BAC1A1 /* Racket BracketUITests */ = {
+			isa = PBXGroup;
+			children = (
+				207A41B027E28DD000BAC1A1 /* Racket_BracketUITests.swift */,
+				207A41B227E28DD000BAC1A1 /* Racket_BracketUITestsLaunchTests.swift */,
+			);
+			path = "Racket BracketUITests";
+			sourceTree = "<group>";
+		};
+		207A41BF27E28E3000BAC1A1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2079FE1927E440D600F2DF19 /* ColorExtensions.swift */,
+				207A41C027E28E3000BAC1A1 /* IntExtensions.swift */,
+				20AF10DD27E502F30081EC07 /* ViewExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		207A41C127E28E3000BAC1A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				207A41C227E28E3000BAC1A1 /* PlayerModel.swift */,
+				207A41C327E28E3000BAC1A1 /* RankingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		207A41C427E28E3000BAC1A1 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				207A41C527E28E3000BAC1A1 /* Rank.swift */,
+				207A41C627E28E3000BAC1A1 /* Match.swift */,
+				207A41C727E28E3000BAC1A1 /* Player.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		20AF10D227E4EA340081EC07 /* NewMatch */ = {
+			isa = PBXGroup;
+			children = (
+				20AF10D027E4E9A60081EC07 /* NewMatchView.swift */,
+				20AF10D327E4EA450081EC07 /* AddChallengeMatchView.swift */,
+				20AF10D527E4EA4B0081EC07 /* AddRegularMatchView.swift */,
+				20B2E6BA27E6757300EE9120 /* SetScoreView.swift */,
+			);
+			path = NewMatch;
+			sourceTree = "<group>";
+		};
+		20F97A9427E2EF9C00CECF56 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				207A41A627E28DD000BAC1A1 /* BaseTest.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		207A419127E28DCF00BAC1A1 /* Racket Bracket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 207A41B627E28DD000BAC1A1 /* Build configuration list for PBXNativeTarget "Racket Bracket" */;
+			buildPhases = (
+				207A418E27E28DCF00BAC1A1 /* Sources */,
+				207A418F27E28DCF00BAC1A1 /* Frameworks */,
+				207A419027E28DCF00BAC1A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Racket Bracket";
+			productName = "Racket Bracket";
+			productReference = 207A419227E28DCF00BAC1A1 /* Racket Bracket.app */;
+			productType = "com.apple.product-type.application";
+		};
+		207A41A127E28DD000BAC1A1 /* Racket BracketTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 207A41B927E28DD000BAC1A1 /* Build configuration list for PBXNativeTarget "Racket BracketTests" */;
+			buildPhases = (
+				207A419E27E28DD000BAC1A1 /* Sources */,
+				207A419F27E28DD000BAC1A1 /* Frameworks */,
+				207A41A027E28DD000BAC1A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				207A41A427E28DD000BAC1A1 /* PBXTargetDependency */,
+			);
+			name = "Racket BracketTests";
+			productName = "Racket BracketTests";
+			productReference = 207A41A227E28DD000BAC1A1 /* Racket BracketTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		207A41AB27E28DD000BAC1A1 /* Racket BracketUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 207A41BC27E28DD000BAC1A1 /* Build configuration list for PBXNativeTarget "Racket BracketUITests" */;
+			buildPhases = (
+				207A41A827E28DD000BAC1A1 /* Sources */,
+				207A41A927E28DD000BAC1A1 /* Frameworks */,
+				207A41AA27E28DD000BAC1A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				207A41AE27E28DD000BAC1A1 /* PBXTargetDependency */,
+			);
+			name = "Racket BracketUITests";
+			productName = "Racket BracketUITests";
+			productReference = 207A41AC27E28DD000BAC1A1 /* Racket BracketUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		207A418A27E28DCF00BAC1A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					207A419127E28DCF00BAC1A1 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					207A41A127E28DD000BAC1A1 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 207A419127E28DCF00BAC1A1;
+					};
+					207A41AB27E28DD000BAC1A1 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 207A419127E28DCF00BAC1A1;
+					};
+				};
+			};
+			buildConfigurationList = 207A418D27E28DCF00BAC1A1 /* Build configuration list for PBXProject "Racket Bracket" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 207A418927E28DCF00BAC1A1;
+			productRefGroup = 207A419327E28DCF00BAC1A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				207A419127E28DCF00BAC1A1 /* Racket Bracket */,
+				207A41A127E28DD000BAC1A1 /* Racket BracketTests */,
+				207A41AB27E28DD000BAC1A1 /* Racket BracketUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		207A419027E28DCF00BAC1A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				207A419D27E28DD000BAC1A1 /* Preview Assets.xcassets in Resources */,
+				207A419A27E28DD000BAC1A1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		207A41A027E28DD000BAC1A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		207A41AA27E28DD000BAC1A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		207A418E27E28DCF00BAC1A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2079FE1C27E4458200F2DF19 /* NewPlayerView.swift in Sources */,
+				2079FE2027E4464900F2DF19 /* RoundedTextField.swift in Sources */,
+				207A41C827E28E3000BAC1A1 /* IntExtensions.swift in Sources */,
+				207A419827E28DCF00BAC1A1 /* ContentView.swift in Sources */,
+				20AF10D827E4EC210081EC07 /* Checkbox.swift in Sources */,
+				2079FE1427E43B2100F2DF19 /* AddButtonUX.swift in Sources */,
+				2079FE1627E43B2A00F2DF19 /* AddButtonConfig.swift in Sources */,
+				20B2E6BB27E6757300EE9120 /* SetScoreView.swift in Sources */,
+				2076BAA727E3D31A0032B942 /* PlayerRowView.swift in Sources */,
+				207A41CA27E28E3000BAC1A1 /* RankingModel.swift in Sources */,
+				207A41CB27E28E3000BAC1A1 /* Rank.swift in Sources */,
+				20AF10DE27E502F30081EC07 /* ViewExtensions.swift in Sources */,
+				207A41CD27E28E3000BAC1A1 /* Player.swift in Sources */,
+				2079FE1827E43F7300F2DF19 /* AddButtonArrayView.swift in Sources */,
+				2079FE1127E43AEF00F2DF19 /* AddButtonView.swift in Sources */,
+				20AF10D627E4EA4B0081EC07 /* AddRegularMatchView.swift in Sources */,
+				20AF10D127E4E9A60081EC07 /* NewMatchView.swift in Sources */,
+				2079FE0E27E43A0A00F2DF19 /* PlayerListView.swift in Sources */,
+				2010E79D27E44DD700D736A0 /* RoundedButton.swift in Sources */,
+				20AF10DA27E4FBFA0081EC07 /* SelectPlayerSectionView.swift in Sources */,
+				2079FE1A27E440D600F2DF19 /* ColorExtensions.swift in Sources */,
+				207A41C927E28E3000BAC1A1 /* PlayerModel.swift in Sources */,
+				207A419627E28DCF00BAC1A1 /* Racket_BracketApp.swift in Sources */,
+				20AF10D427E4EA450081EC07 /* AddChallengeMatchView.swift in Sources */,
+				207A41CC27E28E3000BAC1A1 /* Match.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		207A419E27E28DD000BAC1A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20F97A9727E2EFAE00CECF56 /* RankingTests.swift in Sources */,
+				207A41A727E28DD000BAC1A1 /* BaseTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		207A41A827E28DD000BAC1A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				207A41B127E28DD000BAC1A1 /* Racket_BracketUITests.swift in Sources */,
+				207A41B327E28DD000BAC1A1 /* Racket_BracketUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		207A41A427E28DD000BAC1A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 207A419127E28DCF00BAC1A1 /* Racket Bracket */;
+			targetProxy = 207A41A327E28DD000BAC1A1 /* PBXContainerItemProxy */;
+		};
+		207A41AE27E28DD000BAC1A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 207A419127E28DCF00BAC1A1 /* Racket Bracket */;
+			targetProxy = 207A41AD27E28DD000BAC1A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		207A41B427E28DD000BAC1A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		207A41B527E28DD000BAC1A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		207A41B727E28DD000BAC1A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Racket Bracket/Preview Content\"";
+				DEVELOPMENT_TEAM = LDP4JU492S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evan.crow.Racket-Bracket";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		207A41B827E28DD000BAC1A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Racket Bracket/Preview Content\"";
+				DEVELOPMENT_TEAM = LDP4JU492S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evan.crow.Racket-Bracket";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		207A41BA27E28DD000BAC1A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LDP4JU492S;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evan.crow.Racket-BracketTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Racket Bracket.app/Racket Bracket";
+			};
+			name = Debug;
+		};
+		207A41BB27E28DD000BAC1A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LDP4JU492S;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evan.crow.Racket-BracketTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Racket Bracket.app/Racket Bracket";
+			};
+			name = Release;
+		};
+		207A41BD27E28DD000BAC1A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LDP4JU492S;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evan.crow.Racket-BracketUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Racket Bracket";
+			};
+			name = Debug;
+		};
+		207A41BE27E28DD000BAC1A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = LDP4JU492S;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.evan.crow.Racket-BracketUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Racket Bracket";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		207A418D27E28DCF00BAC1A1 /* Build configuration list for PBXProject "Racket Bracket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				207A41B427E28DD000BAC1A1 /* Debug */,
+				207A41B527E28DD000BAC1A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		207A41B627E28DD000BAC1A1 /* Build configuration list for PBXNativeTarget "Racket Bracket" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				207A41B727E28DD000BAC1A1 /* Debug */,
+				207A41B827E28DD000BAC1A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		207A41B927E28DD000BAC1A1 /* Build configuration list for PBXNativeTarget "Racket BracketTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				207A41BA27E28DD000BAC1A1 /* Debug */,
+				207A41BB27E28DD000BAC1A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		207A41BC27E28DD000BAC1A1 /* Build configuration list for PBXNativeTarget "Racket BracketUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				207A41BD27E28DD000BAC1A1 /* Debug */,
+				207A41BE27E28DD000BAC1A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 207A418A27E28DCF00BAC1A1 /* Project object */;
+}
