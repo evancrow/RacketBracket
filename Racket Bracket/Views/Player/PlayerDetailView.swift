@@ -13,6 +13,15 @@ struct PlayerDetailView: View {
     
     @State var nameHeight: CGFloat = 0
     @State var renaming = false
+    @State var matchFilter: MatchType?
+    
+    var matches: [Match] {
+        if let matchFilter = matchFilter {
+            return player.matches.filter { $0.matchType == matchFilter }
+        } else {
+            return player.matches
+        }
+    }
     
     var rankName: some View {
         HStack {
@@ -58,26 +67,75 @@ struct PlayerDetailView: View {
         }
     }
     
+    var filter: some View {
+        Menu {
+            Button {
+                matchFilter = .regular
+            } label: {
+                Label {
+                    Text("Regular Matches")
+                } icon: {
+                    if matchFilter == .regular {
+                        Image(systemName: "checkmark")
+                    }
+                }
+            }
+            
+            Button {
+                matchFilter = .challenge
+            } label: {
+                Label {
+                    Text("Challenge Matches")
+                } icon: {
+                    if matchFilter == .challenge {
+                        Image(systemName: "checkmark")
+                    }
+                }
+            }
+            
+            Button {
+                matchFilter = nil
+            } label: {
+                Label {
+                    Text("All")
+                } icon: {
+                    if matchFilter == nil {
+                        Image(systemName: "checkmark")
+                    }
+                }
+            }
+        } label: {
+            Image(systemName: matchFilter == nil ?
+                  "line.3.horizontal.decrease.circle" : "line.3.horizontal.decrease.circle.fill")
+                .font(.title3)
+        }
+    }
+    
     @ViewBuilder
     var matchesList: some View {
-        if player.matches.count > 0 {
-            List {
-                Section {
-                    ForEach(player.matches) { match in
+        VStack(alignment: .leading) {
+            HStack {
+                Text("Matches")
+                    .font(.title)
+                    .bold()
+                    .foregroundColor(.label)
+                
+                Spacer()
+                
+                filter
+            }
+            
+            if player.matches.count > 0 {
+                ScrollView(showsIndicators: false) {
+                    ForEach(matches) { match in
                         MatchRowView(match: match, player: player)
                     }.onDelete(perform: deleteMatch).id(UUID())
-                } header: {
-                    Text("Matches")
-                        .font(.title)
-                        .bold()
-                        .padding(-20)
-                        .padding(.bottom, 24)
-                        .foregroundColor(.label)
                 }
-            }.padding(-20)
-        } else {
-            Text("The player's matches will display here! You can add a match by tapping + on the home page.")
-                .fontWeight(.medium)
+            } else {
+                Text("The player's matches will display here! You can add a match by tapping + on the home page.")
+                    .fontWeight(.medium)
+                    .padding(.top)
+            }
         }
     }
     
@@ -92,7 +150,6 @@ struct PlayerDetailView: View {
             
             OverlaySheetView {
                 matchesList
-                    .padding()
             }
         }
         .navigationBarTitleDisplayMode(.inline)
@@ -122,6 +179,15 @@ struct PlayerDetailView: View {
 
 struct PlayerDetailView_Previews: PreviewProvider {
     static var previews: some View {
+        NavigationView {
+            PlayerDetailView(player: Player.mockPlayer())
+            
+        }
+        
+        NavigationView {
+            PlayerDetailView(player: Player.mockPlayer(), matchFilter: .regular)
+        }
+        
         NavigationView {
             PlayerDetailView(player: Player.mockPlayer(addMatch: false))
         }

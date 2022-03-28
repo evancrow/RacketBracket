@@ -67,7 +67,7 @@ struct MatchRowView: View {
             Spacer()
             
             RankChange(pointsGained: RankingModel.shared.caluclatePoints(with: match, forWin: didWin))
-        }.padding(.vertical, 4).frame(maxWidth: .infinity).background(Color.defaultBackground)
+        }.padding().frame(maxWidth: .infinity).background(Color.defaultBackground.cornerRadius(12))
     }
 }
 

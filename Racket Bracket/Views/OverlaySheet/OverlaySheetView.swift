@@ -39,6 +39,21 @@ struct OverlaySheetView<Content: View>: View {
         return max(height + dragOffset, OverlaySheetUX.topPadding)
     }
     
+    var drag: some Gesture {
+        DragGesture()
+            .onChanged { value in
+                self.dragOffset += value.translation.height
+            }.onEnded { value in
+                if spacerHeight < viewHeight / 3 {
+                    position = .top
+                } else {
+                    position = .middle
+                }
+                
+                self.dragOffset = 0
+            }
+    }
+    
     var body: some View {
         VStack {
             Spacer()
@@ -54,26 +69,19 @@ struct OverlaySheetView<Content: View>: View {
                         x: 0, y: -OverlaySheetUX.shadowRadius)
                 
                 VStack {
-                    Capsule()
-                        .frame(width: 28, height: 6)
-                        .foregroundColor(.secondary)
+                    HStack {
+                        Spacer()
+                        
+                        Capsule()
+                            .frame(width: 28, height: 6)
+                            .foregroundColor(.secondary)
+                        
+                        Spacer()
+                    }.gesture(drag)
                     
                     content
-                }.padding()
-            }.highPriorityGesture(
-                DragGesture()
-                    .onChanged { value in
-                        self.dragOffset += value.translation.height
-                    }.onEnded { value in
-                        if spacerHeight < viewHeight / 3 {
-                            position = .top
-                        } else {
-                            position = .middle
-                        }
-                        
-                        self.dragOffset = 0
-                    }
-                )
+                }.padding([.top, .horizontal])
+            }
         }.background(
             GeometryReader { geom in
                 Color.clear.useEffect(deps: geom.size) { _ in
