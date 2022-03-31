@@ -8,22 +8,42 @@
 import SwiftUI
 
 struct MatchRowView: View {
+    @EnvironmentObject var teamModel: TeamModel
+    
     var match: Match
     var player: Player
     
     var didWin: Bool {
-        match.winner == player
+        match.winnerId == player.userId
+    }
+    
+    var winner: Player? {
+        if let winner = match.winnerId {
+            return teamModel.players.first { $0.userId == winner }
+        }
+        
+        return nil
+    }
+    
+    var loser: Player? {
+        if let loser = match.loserId {
+            return teamModel.players.first { $0.userId == loser }
+        }
+        
+        return nil
     }
     
     var opponent: Player? {
-        if let winner = match.winner, winner != player {
+        if let winner = winner, winner != player {
             return winner
-        } else if let loser = match.loser, loser != player {
+        } else if let loser = loser, loser != player {
             return loser
         }
         
         return nil
     }
+    
+    @State var showOpponentNavigationView = false
     
     var body: some View {
         HStack {
@@ -42,22 +62,20 @@ struct MatchRowView: View {
                         Text("vs. ")
                             .fontWeight(.regular)
                         
-                        NavigationLink {
+                        Text(opponent.fullName)
+                            .fontWeight(.medium)
+                            .foregroundColor(.blue)
+                            .onTapGesture {
+                                showOpponentNavigationView = true
+                            }
+                        
+                        Spacer()
+                        
+                        NavigationLink(isActive: $showOpponentNavigationView) {
                             PlayerDetailView(player: opponent)
                         } label: {
                             EmptyView()
-                        }
-                        .opacity(0)
-                        .background(
-                            HStack {
-                                Text(opponent.fullName)
-                                    .fontWeight(.medium)
-                                    .foregroundColor(.blue)
-                                
-                                
-                                Spacer()
-                            }
-                        )
+                        }.opacity(0)
                     }
                     
                     Spacer()
@@ -66,14 +84,12 @@ struct MatchRowView: View {
             
             Spacer()
             
-            RankChange(pointsGained: RankingModel.shared.caluclatePoints(with: match, forWin: didWin))
+            RankChange(pointsGained: RankingModel.shared.caluclatePoints(
+                with: match,
+                winner: winner,
+                loser: loser,
+                forWin: didWin)
+            )
         }.padding().frame(maxWidth: .infinity).background(Color.defaultBackground.cornerRadius(12))
-    }
-}
-
-struct MatchRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        let match = Match.mockChallengeMatch()
-        MatchRowView(match: match, player: match.winner!)
     }
 }

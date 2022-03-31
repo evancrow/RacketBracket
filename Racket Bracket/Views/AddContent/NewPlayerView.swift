@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NewPlayerView: View {
-    @EnvironmentObject var playerModel: PlayerModel
+    @EnvironmentObject var teamModel: TeamModel
     @Environment(\.presentationMode) var presentationMode
     
     @State var playerFirstName = ""
@@ -33,7 +33,7 @@ struct NewPlayerView: View {
             
             if !editing {
                 RoundedButton(title: "Add Another Player") {
-                    playerModel.addPlayer(with: playerFirstName, lastName: playerLastName)
+                    teamModel.addPlayer(with: playerFirstName, lastName: playerLastName)
                     playerFirstName = ""
                     playerLastName = ""
                 }.disabled(disabled)
@@ -43,9 +43,9 @@ struct NewPlayerView: View {
                 if editing, let player = player {
                     player.firstName = playerFirstName
                     player.lastName = playerLastName
-                    playerModel.savePlayers()
+                    teamModel.savePlayers()
                 } else {
-                    playerModel.addPlayer(with: playerFirstName, lastName: playerLastName)
+                    teamModel.addPlayer(with: playerFirstName, lastName: playerLastName)
                 }
                
                 presentationMode.wrappedValue.dismiss()

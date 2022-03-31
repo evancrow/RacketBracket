@@ -21,17 +21,32 @@ enum MatchType: String {
     case regular = "regular"
 }
 
-class Match: NSObject, Identifiable {
+class Match: NSObject, Identifiable, CloudSavable {
     internal let id = UUID()
+    private let dateFormat = "yyyy-MM-dd"
     
     let date: Date
-    let winner: Player?
-    let loser: Player?
+    let winnerId: String?
+    let loserId: String?
     let matchType: MatchType
 
     /// The score for sets i.e. (6, 4).
     /// Highest number wins.
     let setScore: (Int, Int)
+    
+    var dictionaryObject: [String : Any] {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        
+        return [
+            MatchArchiverKeys.date: dateFormatter.string(from: date),
+            MatchArchiverKeys.winner: winnerId as Any,
+            MatchArchiverKeys.loser: loserId as Any,
+            MatchArchiverKeys.matchType: matchType.rawValue,
+            MatchArchiverKeys.setScoreWinner: setScore.0,
+            MatchArchiverKeys.setScoreLoser: setScore.1
+        ]
+    }
     
     // MARK: - init
     init(
@@ -42,16 +57,16 @@ class Match: NSObject, Identifiable {
         setScore: (Int, Int)
     ) {
         self.date = date
-        self.winner = winner
-        self.loser = loser
+        self.winnerId = winner?.userId
+        self.loserId = loser?.userId
         self.matchType = matchType
         self.setScore = setScore
     }
     
     required init(coder decoder: NSCoder) {
         self.date = decoder.decodeObject(forKey: MatchArchiverKeys.date) as? Date ?? Date()
-        self.winner = decoder.decodeObject(forKey: MatchArchiverKeys.winner) as? Player
-        self.loser = decoder.decodeObject(forKey: MatchArchiverKeys.loser) as? Player
+        self.winnerId = decoder.decodeObject(forKey: MatchArchiverKeys.winner) as? String
+        self.loserId = decoder.decodeObject(forKey: MatchArchiverKeys.loser) as? String
         
         let matchType = decoder.decodeObject(forKey: MatchArchiverKeys.matchType) as? String ?? ""
         self.matchType = MatchType(rawValue: matchType) ?? .regular
@@ -60,13 +75,31 @@ class Match: NSObject, Identifiable {
         let setScoreLoser = decoder.decodeInteger(forKey: MatchArchiverKeys.setScoreLoser)
         self.setScore = (setScoreWinner, setScoreLoser)
     }
+    
+    init(data: [String: Any]) {
+        let date = data[MatchArchiverKeys.date] as? String ?? ""
+        let winnerId = data[MatchArchiverKeys.winner] as? String ?? ""
+        let loserId = data[MatchArchiverKeys.loser] as? String ?? ""
+        let matchType = data[MatchArchiverKeys.matchType] as? String ?? ""
+        let scoreWinner = data[MatchArchiverKeys.setScoreWinner] as? Int ?? 0
+        let scoreLoser = data[MatchArchiverKeys.setScoreLoser] as? Int ?? 0
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = dateFormat
+        
+        self.date = dateFormatter.date(from: date)!
+        self.winnerId = winnerId
+        self.loserId = loserId
+        self.matchType = MatchType(rawValue: matchType) ?? .challenge
+        self.setScore = (scoreWinner, scoreLoser)
+    }
 }
 
 extension Match: NSCoding {
     func encode(with coder: NSCoder) {
         coder.encode(date, forKey: MatchArchiverKeys.date)
-        coder.encode(winner, forKey: MatchArchiverKeys.winner)
-        coder.encode(loser, forKey: MatchArchiverKeys.loser)
+        coder.encode(winnerId, forKey: MatchArchiverKeys.winner)
+        coder.encode(loserId, forKey: MatchArchiverKeys.loser)
         coder.encode(matchType.rawValue, forKey: MatchArchiverKeys.matchType)
         coder.encode(setScore.0, forKey: MatchArchiverKeys.setScoreWinner)
         coder.encode(setScore.1, forKey: MatchArchiverKeys.setScoreLoser)

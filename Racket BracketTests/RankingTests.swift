@@ -10,49 +10,52 @@ import XCTest
 
 class RankingTests: BaseTest {
     func testSingleMatchAdjustingRank() {
-        let (playerModel, rankingModel) = createMockObjects(numberOfPlayers: 2)
-        let winner = playerModel.players[0]
-        let loser = playerModel.players[1]
-        let mockMatch = Match(winner: winner, loser: loser, setScore: (8, 4))
+        let (teamModel, rankingModel) = createMockObjects(numberOfPlayers: 2)
+        let winner = teamModel.players[0]
+        let loser = teamModel.players[1]
+        let mockMatch = Match(winner: winner, loser: loser, matchType: .challenge, setScore: (8, 4))
         
-        rankingModel.updateRanks(with: mockMatch, playerModel: playerModel)
+        rankingModel.updateRanks(with: mockMatch, teamModel: teamModel)
         
         // Make sure the highest ranked player has the most points
-        XCTAssertTrue(playerModel.playersRanked[0].rank.rawScore > playerModel.playersRanked[1].rank.rawScore)
+        XCTAssertTrue(teamModel.playersRanked[0].rank.rawScore > teamModel.playersRanked[1].rank.rawScore)
     }
     
     func testRankAdjustmentAfterMultipleGames() {
-        let (playerModel, rankingModel) = createMockObjects(numberOfPlayers: 2)
-        let playerOne = playerModel.players[0]
-        let playerTwo = playerModel.players[1]
+        let (teamModel, rankingModel) = createMockObjects(numberOfPlayers: 2)
+        let playerOne = teamModel.players[0]
+        let playerTwo = teamModel.players[1]
         
         // Game 1
         rankingModel.updateRanks(
-            with: Match(winner: playerOne, loser: playerTwo, setScore: (8, 4)), playerModel: playerModel)
+            with: Match(winner: playerOne, loser: playerTwo, matchType: .challenge, setScore: (8, 4)),
+            teamModel: teamModel)
         
         // Player 1 ranked first.
         // Game 2
         rankingModel.updateRanks(
-            with: Match(winner: playerTwo, loser: playerOne, setScore: (8, 7)), playerModel: playerModel)
+            with: Match(winner: playerTwo, loser: playerOne, matchType: .challenge, setScore: (8, 7)),
+            teamModel: teamModel)
         
         // Player 1 still ranked first.
         // Game 3
         rankingModel.updateRanks(
-            with: Match(winner: playerTwo, loser: playerOne, setScore: (5, 7)), playerModel: playerModel)
+            with: Match(winner: playerTwo, loser: playerOne, matchType: .challenge, setScore: (5, 7)),
+            teamModel: teamModel)
         
         // Player 2 should end up ranked first.
         XCTAssertTrue(playerTwo.rank.value == 1)
     }
     
     func testLargeSimulatedGame() {
-        let (playerModel, rankingModel) = createMockObjects(numberOfPlayers: 10)
+        let (teamModel, rankingModel) = createMockObjects(numberOfPlayers: 10)
         
         // Play 200 games
         for _ in 1...200 {
-            playerModel.players.shuffle()
+            teamModel.players.shuffle()
             
-            let firstPlayer = getRandomPlayer(playerModel: playerModel)
-            let secondPlayer = getRandomPlayer(playerModel: playerModel, excluding: [firstPlayer])
+            let firstPlayer = getRandomPlayer(teamModel: teamModel)
+            let secondPlayer = getRandomPlayer(teamModel: teamModel, excluding: [firstPlayer])
             
             let firstPlayerSetsWon = Int.random(in: 2...8)
             let secondPlayerSetsWon = Int.random(in: 2...8)
@@ -65,12 +68,12 @@ class RankingTests: BaseTest {
                     with: Match(
                         winner: winner,
                         loser: loser,
-                        setScore: (firstPlayerSetsWon, secondPlayerSetsWon)),
-                    playerModel: playerModel)
+                        matchType: .challenge, setScore: (firstPlayerSetsWon, secondPlayerSetsWon)),
+                    teamModel: teamModel)
             }
         }
         
-        for (index, player) in playerModel.playersRanked.enumerated() {
+        for (index, player) in teamModel.playersRanked.enumerated() {
             XCTAssertTrue(player.rank.value == index + 1)
         }
     }

@@ -8,54 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject private var playerModel = PlayerModel()
-
-    @State var showNewPlayerView = false
-    @State var showNewChallengeMatchView = false
-    @State var showNewRegularMatchView = false
+    @ObservedObject private var teamModel: TeamModel
+    @ObservedObject private var userModel: UserModel
 
     var body: some View {
-        ZStack {
-            NavigationView {
-                VStack {
-                    PlayerListView() { selectedPlayer in
-                        playerModel.detailPlayer = selectedPlayer
-                    } .navigationTitle("Players")
-                    
-                    NavigationLink(isActive: $playerModel.showPlayerDetailView) {
-                        if let player = playerModel.detailPlayer {
-                            PlayerDetailView(player: player)
-                        }
-                    } label: { EmptyView() }
-
-                    NavigationLink(isActive: $showNewPlayerView) {
-                        NewPlayerView()
-                    } label: { EmptyView() }
-
-                    NavigationLink(isActive: $showNewChallengeMatchView) {
-                        NewMatchView(matchType: .challenge)
-                    } label: { EmptyView() }
-
-                    NavigationLink(isActive: $showNewRegularMatchView) {
-                        NewMatchView(matchType: .regular)
-                    } label: { EmptyView() }
+        Group {
+            if let user = userModel.currentUser {
+                if user.type == .coach {
+                    CoachMainView()
+                } else {
+                    PlayerMainView()
                 }
+            } else {
+                JoinView()
             }
-
-            if !showNewPlayerView && !showNewChallengeMatchView &&
-                !showNewRegularMatchView && !playerModel.showPlayerDetailView {
-                AddButtonArrayView() { action in
-                    switch action {
-                    case .addChallengeMatch:
-                        showNewChallengeMatchView = true
-                    case .addPlayer:
-                        showNewPlayerView = true
-                    case .addRegularMatch:
-                        showNewRegularMatchView = true
-                    }
-                }
-            }
-        }.environmentObject(playerModel)
+        }
+        .environmentObject(teamModel)
+        .environmentObject(userModel)
+    }
+    
+    init() {
+        let userModel = UserModel()
+        
+        self.teamModel = TeamModel(userModel: userModel)
+        self.userModel = userModel
     }
 }
 

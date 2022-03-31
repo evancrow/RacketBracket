@@ -9,7 +9,8 @@ import SwiftUI
 
 struct PlayerDetailView: View {
     @ObservedObject var player: Player
-    @EnvironmentObject var playerModel: PlayerModel
+    @EnvironmentObject var teamModel: TeamModel
+    @EnvironmentObject var userModel: UserModel
     
     @State var nameHeight: CGFloat = 0
     @State var renaming = false
@@ -129,9 +130,9 @@ struct PlayerDetailView: View {
                 ScrollView(showsIndicators: false) {
                     ForEach(matches) { match in
                         MatchRowView(match: match, player: player)
-                    }.onDelete(perform: deleteMatch).id(UUID())
+                    }
                 }
-            } else {
+            } else if userModel.canWriteDate {
                 Text("The player's matches will display here! You can add a match by tapping + on the home page.")
                     .fontWeight(.medium)
                     .padding(.top)
@@ -158,7 +159,11 @@ struct PlayerDetailView: View {
                 Button {
                     renaming = true
                 } label: {
-                    Text("Rename")
+                    Label {
+                        Text("Rename")
+                    } icon: {
+                        Image(systemName: "pencil")
+                    }
                 }
             } label: {
                 Image(systemName: "ellipsis.circle")
@@ -170,10 +175,6 @@ struct PlayerDetailView: View {
         } label: {
             EmptyView()
         }
-    }
-    
-    private func deleteMatch(with indexSet: IndexSet) {
-        indexSet.forEach { RankingModel.shared.delete(match: player.matches[$0], playerModel: playerModel) }
     }
 }
 

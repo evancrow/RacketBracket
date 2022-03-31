@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2010E74027F55BF1002DEA3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010E73F27F55BF1002DEA3E /* AppDelegate.swift */; };
+		2010E74227F57C50002DEA3E /* JoinCodeViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010E74127F57C50002DEA3E /* JoinCodeViews.swift */; };
 		2010E79D27E44DD700D736A0 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010E79C27E44DD700D736A0 /* RoundedButton.swift */; };
 		2076BAA727E3D31A0032B942 /* PlayerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076BAA627E3D31A0032B942 /* PlayerRowView.swift */; };
 		2079FE0E27E43A0A00F2DF19 /* PlayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079FE0D27E43A0A00F2DF19 /* PlayerListView.swift */; };
@@ -24,7 +26,7 @@
 		207A41A727E28DD000BAC1A1 /* BaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41A627E28DD000BAC1A1 /* BaseTest.swift */; };
 		207A41B127E28DD000BAC1A1 /* Racket_BracketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41B027E28DD000BAC1A1 /* Racket_BracketUITests.swift */; };
 		207A41C827E28E3000BAC1A1 /* IntExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C027E28E3000BAC1A1 /* IntExtensions.swift */; };
-		207A41C927E28E3000BAC1A1 /* PlayerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C227E28E3000BAC1A1 /* PlayerModel.swift */; };
+		207A41C927E28E3000BAC1A1 /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C227E28E3000BAC1A1 /* TeamModel.swift */; };
 		207A41CA27E28E3000BAC1A1 /* RankingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C327E28E3000BAC1A1 /* RankingModel.swift */; };
 		207A41CB27E28E3000BAC1A1 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C527E28E3000BAC1A1 /* Rank.swift */; };
 		207A41CC27E28E3000BAC1A1 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C627E28E3000BAC1A1 /* Match.swift */; };
@@ -42,6 +44,21 @@
 		20D023E227EED37A000FDEF0 /* OverlaySheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D023E127EED37A000FDEF0 /* OverlaySheetView.swift */; };
 		20D023E527EEE2AB000FDEF0 /* MatchRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D023E427EEE2AB000FDEF0 /* MatchRowView.swift */; };
 		20D023E727EEE5D0000FDEF0 /* RankChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D023E627EEE5D0000FDEF0 /* RankChange.swift */; };
+		20F3C39B27F4C35E00ADDC81 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C39A27F4C35E00ADDC81 /* UserModel.swift */; };
+		20F3C39D27F4C36400ADDC81 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C39C27F4C36400ADDC81 /* User.swift */; };
+		20F3C39F27F4C6DF00ADDC81 /* DataStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C39E27F4C6DF00ADDC81 /* DataStorable.swift */; };
+		20F3C3A227F4CA6D00ADDC81 /* CoachMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C3A127F4CA6D00ADDC81 /* CoachMainView.swift */; };
+		20F3C3A427F4CBEE00ADDC81 /* JoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C3A327F4CBEE00ADDC81 /* JoinView.swift */; };
+		20F3C3A627F4CC0100ADDC81 /* PlayerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C3A527F4CC0100ADDC81 /* PlayerMainView.swift */; };
+		20F3C3A827F4D37400ADDC81 /* NewTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C3A727F4D37400ADDC81 /* NewTeamView.swift */; };
+		20F3C3AB27F4D5A300ADDC81 /* JoinTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C3AA27F4D5A300ADDC81 /* JoinTeamView.swift */; };
+		20F3C3AD27F4E1CD00ADDC81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20F3C3AC27F4E1CD00ADDC81 /* GoogleService-Info.plist */; };
+		20F3C3B027F4E25800ADDC81 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 20F3C3AF27F4E25800ADDC81 /* FirebaseAnalytics */; };
+		20F3C3B227F4E25800ADDC81 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 20F3C3B127F4E25800ADDC81 /* FirebaseAuth */; };
+		20F3C3B427F4E25800ADDC81 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 20F3C3B327F4E25800ADDC81 /* FirebaseDatabase */; };
+		20F3C3B627F4E25800ADDC81 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 20F3C3B527F4E25800ADDC81 /* FirebaseFirestore */; };
+		20F3C3B827F4E25800ADDC81 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 20F3C3B727F4E25800ADDC81 /* FirebaseStorage */; };
+		20F3C3BA27F4E3A300ADDC81 /* CloudDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C3B927F4E3A300ADDC81 /* CloudDataModel.swift */; };
 		20F97A9727E2EFAE00CECF56 /* RankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F97A9627E2EFAE00CECF56 /* RankingTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +80,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2010E73F27F55BF1002DEA3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2010E74127F57C50002DEA3E /* JoinCodeViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinCodeViews.swift; sourceTree = "<group>"; };
 		2010E79C27E44DD700D736A0 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		2076BAA627E3D31A0032B942 /* PlayerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRowView.swift; sourceTree = "<group>"; };
 		2079FE0D27E43A0A00F2DF19 /* PlayerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListView.swift; sourceTree = "<group>"; };
@@ -83,7 +102,7 @@
 		207A41AC27E28DD000BAC1A1 /* Racket BracketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Racket BracketUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		207A41B027E28DD000BAC1A1 /* Racket_BracketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racket_BracketUITests.swift; sourceTree = "<group>"; };
 		207A41C027E28E3000BAC1A1 /* IntExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntExtensions.swift; sourceTree = "<group>"; };
-		207A41C227E28E3000BAC1A1 /* PlayerModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerModel.swift; sourceTree = "<group>"; };
+		207A41C227E28E3000BAC1A1 /* TeamModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
 		207A41C327E28E3000BAC1A1 /* RankingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingModel.swift; sourceTree = "<group>"; };
 		207A41C527E28E3000BAC1A1 /* Rank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
 		207A41C627E28E3000BAC1A1 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
@@ -101,6 +120,16 @@
 		20D023E127EED37A000FDEF0 /* OverlaySheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlaySheetView.swift; sourceTree = "<group>"; };
 		20D023E427EEE2AB000FDEF0 /* MatchRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchRowView.swift; sourceTree = "<group>"; };
 		20D023E627EEE5D0000FDEF0 /* RankChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankChange.swift; sourceTree = "<group>"; };
+		20F3C39A27F4C35E00ADDC81 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		20F3C39C27F4C36400ADDC81 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		20F3C39E27F4C6DF00ADDC81 /* DataStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorable.swift; sourceTree = "<group>"; };
+		20F3C3A127F4CA6D00ADDC81 /* CoachMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachMainView.swift; sourceTree = "<group>"; };
+		20F3C3A327F4CBEE00ADDC81 /* JoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinView.swift; sourceTree = "<group>"; };
+		20F3C3A527F4CC0100ADDC81 /* PlayerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMainView.swift; sourceTree = "<group>"; };
+		20F3C3A727F4D37400ADDC81 /* NewTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeamView.swift; sourceTree = "<group>"; };
+		20F3C3AA27F4D5A300ADDC81 /* JoinTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTeamView.swift; sourceTree = "<group>"; };
+		20F3C3AC27F4E1CD00ADDC81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		20F3C3B927F4E3A300ADDC81 /* CloudDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudDataModel.swift; sourceTree = "<group>"; };
 		20F97A9627E2EFAE00CECF56 /* RankingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +138,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F3C3B427F4E25800ADDC81 /* FirebaseDatabase in Frameworks */,
+				20F3C3B627F4E25800ADDC81 /* FirebaseFirestore in Frameworks */,
+				20F3C3B027F4E25800ADDC81 /* FirebaseAnalytics in Frameworks */,
+				20F3C3B827F4E25800ADDC81 /* FirebaseStorage in Frameworks */,
+				20F3C3B227F4E25800ADDC81 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,10 +163,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2010E73E27F55BE7002DEA3E /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				207A419527E28DCF00BAC1A1 /* Racket_BracketApp.swift */,
+				2010E73F27F55BF1002DEA3E /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		2076BAA527E3D27C0032B942 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				2079FE0F27E43ADC00F2DF19 /* AddContent */,
+				20F3C3A027F4CA6000ADDC81 /* Main */,
 				20D023E327EEE2A1000FDEF0 /* Match */,
 				20D023E027EED36D000FDEF0 /* OverlaySheet */,
 				2079FE0C27E43A0000F2DF19 /* Player */,
@@ -144,6 +188,7 @@
 		2079FE0C27E43A0000F2DF19 /* Player */ = {
 			isa = PBXGroup;
 			children = (
+				2010E74127F57C50002DEA3E /* JoinCodeViews.swift */,
 				20D023DA27EEAEA6000FDEF0 /* PlayerDetailView.swift */,
 				2079FE0D27E43A0A00F2DF19 /* PlayerListView.swift */,
 				2076BAA627E3D31A0032B942 /* PlayerRowView.swift */,
@@ -158,6 +203,7 @@
 			children = (
 				2079FE1227E43B1300F2DF19 /* AddButton */,
 				20AF10D227E4EA340081EC07 /* NewMatch */,
+				20F3C3A927F4D55500ADDC81 /* Team */,
 				2079FE1B27E4458200F2DF19 /* NewPlayerView.swift */,
 			);
 			path = AddContent;
@@ -209,9 +255,9 @@
 		207A419427E28DCF00BAC1A1 /* Racket Bracket */ = {
 			isa = PBXGroup;
 			children = (
-				207A419527E28DCF00BAC1A1 /* Racket_BracketApp.swift */,
 				207A419727E28DCF00BAC1A1 /* ContentView.swift */,
 				207A419927E28DD000BAC1A1 /* Assets.xcassets */,
+				2010E73E27F55BE7002DEA3E /* Application */,
 				207A41BF27E28E3000BAC1A1 /* Extensions */,
 				207A41C127E28E3000BAC1A1 /* Model */,
 				207A41C427E28E3000BAC1A1 /* Types */,
@@ -225,6 +271,7 @@
 			isa = PBXGroup;
 			children = (
 				207A419C27E28DD000BAC1A1 /* Preview Assets.xcassets */,
+				20F3C3AC27F4E1CD00ADDC81 /* GoogleService-Info.plist */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -259,8 +306,10 @@
 		207A41C127E28E3000BAC1A1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				207A41C227E28E3000BAC1A1 /* PlayerModel.swift */,
+				20F3C3B927F4E3A300ADDC81 /* CloudDataModel.swift */,
 				207A41C327E28E3000BAC1A1 /* RankingModel.swift */,
+				207A41C227E28E3000BAC1A1 /* TeamModel.swift */,
+				20F3C39A27F4C35E00ADDC81 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -268,9 +317,11 @@
 		207A41C427E28E3000BAC1A1 /* Types */ = {
 			isa = PBXGroup;
 			children = (
-				207A41C527E28E3000BAC1A1 /* Rank.swift */,
+				20F3C39E27F4C6DF00ADDC81 /* DataStorable.swift */,
 				207A41C627E28E3000BAC1A1 /* Match.swift */,
 				207A41C727E28E3000BAC1A1 /* Player.swift */,
+				207A41C527E28E3000BAC1A1 /* Rank.swift */,
+				20F3C39C27F4C36400ADDC81 /* User.swift */,
 			);
 			path = Types;
 			sourceTree = "<group>";
@@ -278,9 +329,9 @@
 		20AF10D227E4EA340081EC07 /* NewMatch */ = {
 			isa = PBXGroup;
 			children = (
-				20AF10D027E4E9A60081EC07 /* NewMatchView.swift */,
 				20AF10D327E4EA450081EC07 /* AddChallengeMatchView.swift */,
 				20AF10D527E4EA4B0081EC07 /* AddRegularMatchView.swift */,
+				20AF10D027E4E9A60081EC07 /* NewMatchView.swift */,
 				20B2E6BA27E6757300EE9120 /* SetScoreView.swift */,
 			);
 			path = NewMatch;
@@ -300,6 +351,25 @@
 				20D023E427EEE2AB000FDEF0 /* MatchRowView.swift */,
 			);
 			path = Match;
+			sourceTree = "<group>";
+		};
+		20F3C3A027F4CA6000ADDC81 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				20F3C3A127F4CA6D00ADDC81 /* CoachMainView.swift */,
+				20F3C3A327F4CBEE00ADDC81 /* JoinView.swift */,
+				20F3C3A527F4CC0100ADDC81 /* PlayerMainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		20F3C3A927F4D55500ADDC81 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				20F3C3AA27F4D5A300ADDC81 /* JoinTeamView.swift */,
+				20F3C3A727F4D37400ADDC81 /* NewTeamView.swift */,
+			);
+			path = Team;
 			sourceTree = "<group>";
 		};
 		20F97A9427E2EF9C00CECF56 /* Base */ = {
@@ -326,6 +396,13 @@
 			dependencies = (
 			);
 			name = "Racket Bracket";
+			packageProductDependencies = (
+				20F3C3AF27F4E25800ADDC81 /* FirebaseAnalytics */,
+				20F3C3B127F4E25800ADDC81 /* FirebaseAuth */,
+				20F3C3B327F4E25800ADDC81 /* FirebaseDatabase */,
+				20F3C3B527F4E25800ADDC81 /* FirebaseFirestore */,
+				20F3C3B727F4E25800ADDC81 /* FirebaseStorage */,
+			);
 			productName = "Racket Bracket";
 			productReference = 207A419227E28DCF00BAC1A1 /* Racket Bracket.app */;
 			productType = "com.apple.product-type.application";
@@ -398,6 +475,9 @@
 				Base,
 			);
 			mainGroup = 207A418927E28DCF00BAC1A1;
+			packageReferences = (
+				20F3C3AE27F4E25800ADDC81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 207A419327E28DCF00BAC1A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -416,6 +496,7 @@
 			files = (
 				207A419D27E28DD000BAC1A1 /* Preview Assets.xcassets in Resources */,
 				207A419A27E28DD000BAC1A1 /* Assets.xcassets in Resources */,
+				20F3C3AD27F4E1CD00ADDC81 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,15 +525,21 @@
 				2079FE2027E4464900F2DF19 /* RoundedTextField.swift in Sources */,
 				20D023DF27EECF02000FDEF0 /* PlayerWinLoseRationView.swift in Sources */,
 				207A41C827E28E3000BAC1A1 /* IntExtensions.swift in Sources */,
+				2010E74027F55BF1002DEA3E /* AppDelegate.swift in Sources */,
+				20F3C3A827F4D37400ADDC81 /* NewTeamView.swift in Sources */,
 				207A419827E28DCF00BAC1A1 /* ContentView.swift in Sources */,
 				20AF10D827E4EC210081EC07 /* Checkbox.swift in Sources */,
 				2079FE1427E43B2100F2DF19 /* AddButtonUX.swift in Sources */,
+				2010E74227F57C50002DEA3E /* JoinCodeViews.swift in Sources */,
 				2079FE1627E43B2A00F2DF19 /* AddButtonConfig.swift in Sources */,
 				20B2E6BB27E6757300EE9120 /* SetScoreView.swift in Sources */,
 				2076BAA727E3D31A0032B942 /* PlayerRowView.swift in Sources */,
 				207A41CA27E28E3000BAC1A1 /* RankingModel.swift in Sources */,
 				207A41CB27E28E3000BAC1A1 /* Rank.swift in Sources */,
+				20F3C3AB27F4D5A300ADDC81 /* JoinTeamView.swift in Sources */,
 				20AF10DE27E502F30081EC07 /* ViewExtensions.swift in Sources */,
+				20F3C3A627F4CC0100ADDC81 /* PlayerMainView.swift in Sources */,
+				20F3C3A227F4CA6D00ADDC81 /* CoachMainView.swift in Sources */,
 				207A41CD27E28E3000BAC1A1 /* Player.swift in Sources */,
 				2079FE1827E43F7300F2DF19 /* AddButtonArrayView.swift in Sources */,
 				2079FE1127E43AEF00F2DF19 /* AddButtonView.swift in Sources */,
@@ -461,16 +548,21 @@
 				2079FE0E27E43A0A00F2DF19 /* PlayerListView.swift in Sources */,
 				20D023E227EED37A000FDEF0 /* OverlaySheetView.swift in Sources */,
 				2010E79D27E44DD700D736A0 /* RoundedButton.swift in Sources */,
+				20F3C3BA27F4E3A300ADDC81 /* CloudDataModel.swift in Sources */,
 				20D023E527EEE2AB000FDEF0 /* MatchRowView.swift in Sources */,
 				20AF10DA27E4FBFA0081EC07 /* SelectPlayerSectionView.swift in Sources */,
 				2079FE1A27E440D600F2DF19 /* ColorExtensions.swift in Sources */,
-				207A41C927E28E3000BAC1A1 /* PlayerModel.swift in Sources */,
+				207A41C927E28E3000BAC1A1 /* TeamModel.swift in Sources */,
 				20D023DD27EECDD1000FDEF0 /* ProgressBar.swift in Sources */,
+				20F3C39B27F4C35E00ADDC81 /* UserModel.swift in Sources */,
+				20F3C3A427F4CBEE00ADDC81 /* JoinView.swift in Sources */,
+				20F3C39F27F4C6DF00ADDC81 /* DataStorable.swift in Sources */,
 				20D023E727EEE5D0000FDEF0 /* RankChange.swift in Sources */,
 				207A419627E28DCF00BAC1A1 /* Racket_BracketApp.swift in Sources */,
 				20AF10D427E4EA450081EC07 /* AddChallengeMatchView.swift in Sources */,
 				20D023DB27EEAEA6000FDEF0 /* PlayerDetailView.swift in Sources */,
 				207A41CC27E28E3000BAC1A1 /* Match.swift in Sources */,
+				20F3C39D27F4C36400ADDC81 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -629,7 +721,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Racket Bracket/Preview Content\"";
-				DEVELOPMENT_TEAM = 2BTUXF52SG;
+				DEVELOPMENT_TEAM = 659X72BL55;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -658,7 +750,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Racket Bracket/Preview Content\"";
-				DEVELOPMENT_TEAM = 2BTUXF52SG;
+				DEVELOPMENT_TEAM = 659X72BL55;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -795,6 +887,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		20F3C3AE27F4E25800ADDC81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		20F3C3AF27F4E25800ADDC81 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20F3C3AE27F4E25800ADDC81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		20F3C3B127F4E25800ADDC81 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20F3C3AE27F4E25800ADDC81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		20F3C3B327F4E25800ADDC81 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20F3C3AE27F4E25800ADDC81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		20F3C3B527F4E25800ADDC81 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20F3C3AE27F4E25800ADDC81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		20F3C3B727F4E25800ADDC81 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20F3C3AE27F4E25800ADDC81 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 207A418A27E28DCF00BAC1A1 /* Project object */;
 }

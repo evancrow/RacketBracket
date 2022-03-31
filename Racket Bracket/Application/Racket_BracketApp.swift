@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct Racket_BracketApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    @Environment(\.scenePhase) var scenePhase
+    
     var body: some Scene {
         WindowGroup {
             ContentView()

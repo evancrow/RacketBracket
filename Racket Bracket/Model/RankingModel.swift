@@ -20,51 +20,38 @@ fileprivate struct RankingChangeWeights {
 class RankingModel {
     public static let shared = RankingModel()
 
-    public func updateRanks(with match: Match, playerModel: PlayerModel) {
+    public func updateRanks(with match: Match, teamModel: TeamModel) {
+        let winner = teamModel.players.first { $0.userId == match.winnerId }
+        let loser = teamModel.players.first { $0.userId == match.loserId }
+        
         // Adjust the players ranks after the match.
-        let winnerPoints = caluclatePoints(with: match, forWin: true)
-        let loserPoints = caluclatePoints(with: match, forWin: false)
-       
-        match.winner?.rank.rawScore += winnerPoints
-        match.winner?.matches.append(match)
+        let winnerPoints = caluclatePoints(with: match, winner: winner, loser: loser, forWin: true)
+        let loserPoints = caluclatePoints(with: match, winner: winner, loser: loser, forWin: false)
+      
+        winner?.rank.rawScore += winnerPoints
+        winner?.matches.append(match)
         
-        match.loser?.rank.rawScore += loserPoints
-        match.loser?.matches.append(match)
+        loser?.rank.rawScore += loserPoints
+        loser?.matches.append(match)
         
-        updateRanks(playerModel: playerModel)
+        updateRanks(teamModel: teamModel)
     }
     
-    public func delete(match: Match, playerModel: PlayerModel) {
-        // Adjust the players ranks to before the match.
-        let winnerPoints = caluclatePoints(with: match, forWin: true)
-        let loserPoints = caluclatePoints(with: match, forWin: false)
-       
-        match.winner?.rank.rawScore -= winnerPoints
-        match.winner?.matches.removeAll { $0 == match }
-        
-        match.loser?.rank.rawScore -= loserPoints
-        match.loser?.matches.removeAll { $0 == match }
-        
-       updateRanks(playerModel: playerModel)
-    }
-    
-    private func updateRanks(playerModel: PlayerModel) {
+    private func updateRanks(teamModel: TeamModel) {
         // Update all the players ranking with the new scores.
         // The more points a player has, the higher ranked they are.
-        let playersRanked = playerModel.players.sorted { $0.rank.rawScore > $1.rank.rawScore }
+        let playersRanked = teamModel.players.sorted { $0.rank.rawScore > $1.rank.rawScore }
         for (index, player) in playersRanked.enumerated() {
             let index = index + 1
             player.rank.value = index
         }
         
-        playerModel.savePlayers()
+        teamModel.savePlayers()
     }
 
 
     // MARK: - Calculating Points
-    public func caluclatePoints(with match: Match, forWin: Bool) -> Int {
-        let winner = match.winner
-        let loser = match.loser
+    public func caluclatePoints(with match: Match, winner: Player?, loser: Player?, forWin: Bool) -> Int {
         let pointsForRank = calculatePointsForRank(winner: winner, loser: loser)
         let pointsForSetDifference = calculatePointsForSetDifference(setScore: match.setScore)
 

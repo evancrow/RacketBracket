@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AddRegularMatchView: View {
-    @EnvironmentObject var playerModel: PlayerModel
+    @EnvironmentObject var teamModel: TeamModel
     @Environment(\.presentationMode) var presentationMode
     
     @State var player: Player?
@@ -55,13 +55,13 @@ struct AddRegularMatchView: View {
         let loser: Player? = !isWinner ? player : nil
 
         let match = Match(winner: winner, loser: loser, matchType: .challenge, setScore: (winnerPoints, loserPoints))
-        RankingModel.shared.updateRanks(with: match, playerModel: playerModel)
+        RankingModel.shared.updateRanks(with: match, teamModel: teamModel)
     }
 }
 
 struct AddRegularMatchView_Previews: PreviewProvider {
     static var previews: some View {
         AddRegularMatchView()
-            .environmentObject(PlayerModel(addMockPlayers: true))
+            .environmentObject(TeamModel(addMockPlayers: true))
     }
 }

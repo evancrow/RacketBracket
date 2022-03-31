@@ -9,11 +9,12 @@ import SwiftUI
 
 struct PlayerListView: View {
     @Environment(\.presentationMode) var presentationMode
-    @EnvironmentObject var playerModel: PlayerModel
+    @EnvironmentObject var teamModel: TeamModel
     
     @State private var nameFilter = ""
     @State private var filteredPlayers: [Player] = []
     
+    var detailPlayer: Player? = nil
     var excluding: [Player?] = []
     var selectMode = false
     var playerSelected: ((Player) -> Void)?
@@ -28,8 +29,20 @@ struct PlayerListView: View {
                 }
             }
             
+            if let detailPlayer = detailPlayer {
+                Button {
+                    if let playerSelected = playerSelected {
+                        playerSelected(detailPlayer)
+                        presentationMode.wrappedValue.dismiss()
+                    }
+                } label: {
+                    PlayerRowView(player: detailPlayer)
+                        .id(detailPlayer.id)
+                }
+            }
+            
             Section {
-                ForEach(filteredPlayers) { player in
+                ForEach(filteredPlayers.filter { $0.matches.count > 0 }) { player in
                     Button {
                         if let playerSelected = playerSelected {
                             playerSelected(player)
@@ -40,21 +53,43 @@ struct PlayerListView: View {
                             .id(player.id)
                     }
                 }.onDelete(perform: delete).id(UUID())
+            } header: {
+                Text("Ranked")
+            }
+            
+            Section {
+                ForEach(filteredPlayers.filter { $0.matches.count == 0 }) { player in
+                    Button {
+                        if let playerSelected = playerSelected {
+                            playerSelected(player)
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                    } label: {
+                        PlayerRowView(player: player)
+                            .id(player.id)
+                    }
+                }.onDelete(perform: delete).id(UUID())
+            } header: {
+                Text("Not Ranked (no games played)")
             }
         }.useEffect(deps: nameFilter) { _ in
             updateFilteredPlayers()
-        }.onChange(of: playerModel.players) { _ in
+        }.onChange(of: teamModel.players) { _ in
             updateFilteredPlayers()
+        }.refreshable {
+            teamModel.retrieveDataFromCloud()
         }
     }
     
     private func delete(with indexSet: IndexSet) {
-        indexSet.forEach { playerModel.players.remove(at: $0) }
+        DispatchQueue.main.async {
+            indexSet.forEach { teamModel.players.remove(at: $0) }
+        }
     }
     
     private func updateFilteredPlayers() {
-        filteredPlayers = playerModel.playersRanked.filter {
-            $0.fullName.contains(nameFilter) || nameFilter.isEmpty || !selectMode
+        filteredPlayers = teamModel.playersRanked.filter {
+            ($0.fullName.contains(nameFilter) || nameFilter.isEmpty || !selectMode) && !excluding.contains($0)
         }
     }
 }
@@ -62,9 +97,9 @@ struct PlayerListView: View {
 struct PlayerListView_Previews: PreviewProvider {
     static var previews: some View {
         PlayerListView()
-            .environmentObject(PlayerModel(addMockPlayers: true))
+            .environmentObject(TeamModel(addMockPlayers: true))
         
         PlayerListView(selectMode: true)
-            .environmentObject(PlayerModel(addMockPlayers: true))
+            .environmentObject(TeamModel(addMockPlayers: true))
     }
 }
