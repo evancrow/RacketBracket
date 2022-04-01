@@ -59,6 +59,12 @@ class UserModel: DataStorable<User>, ObservableObject {
         }
     }
     
+    // MARK: - Logging Out
+    public func logOut(teamModel: TeamModel) {
+        currentUser = nil
+        teamModel.clearTeam()
+    }
+    
     // MARK: - init
     init() {
         super.init(extensionPath: DataExtensionPaths.user)

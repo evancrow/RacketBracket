@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-fileprivate struct PlayerArchiverKeys {
+struct PlayerArchiverKeys {
     static let userId = "userId"
     static let firstName = "firstName"
     static let lastName = "lastName"
@@ -97,7 +97,7 @@ extension Player {
             userId: UUID().uuidString,
             firstName: String(Int.random(in: 1...100)),
             lastName: String(Int.random(in: 1...10000)),
-            rank: Rank(value: 0, rawScore: 0),
+            rank: Rank(value: Int.random(in: 1...10), rawScore: Int.random(in: 100...1000)),
             matches: [])
         
         if addMatch {

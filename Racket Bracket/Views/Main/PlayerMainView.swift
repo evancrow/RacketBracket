@@ -34,8 +34,7 @@ struct PlayerMainView: View {
                     }
                     
                     Button {
-                        userModel.currentUser = nil
-                        teamModel.clearTeam()
+                        userModel.logOut(teamModel: teamModel)
                     } label: {
                         Label {
                             Text("Sign out of team")

@@ -9,7 +9,7 @@ import XCTest
 @testable import Racket_Bracket
 
 class BaseTest: XCTestCase {
-    func createMockObjects(numberOfPlayers: Int = 5) -> (TeamModel, RankingModel) {
+    func createMockTeamModel(numberOfPlayers: Int = 5) -> TeamModel {
         let mockPlayers: [Player] = {
             var players = [Player]()
             for _ in 1...numberOfPlayers {
@@ -22,9 +22,15 @@ class BaseTest: XCTestCase {
         let teamModel = TeamModel()
         teamModel.players = mockPlayers
         
-        let rankingModel = RankingModel()
-        
-        return (teamModel, rankingModel)
+        return teamModel
+    }
+    
+    func createMockRankingModel() -> RankingModel {
+        return RankingModel()
+    }
+    
+    func createMockUserModel() -> UserModel {
+        return UserModel()
     }
     
     func getRandomPlayer(teamModel: TeamModel, excluding: [Player] = []) -> Player {

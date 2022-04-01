@@ -31,6 +31,7 @@
 		207A41CB27E28E3000BAC1A1 /* Rank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C527E28E3000BAC1A1 /* Rank.swift */; };
 		207A41CC27E28E3000BAC1A1 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C627E28E3000BAC1A1 /* Match.swift */; };
 		207A41CD27E28E3000BAC1A1 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A41C727E28E3000BAC1A1 /* Player.swift */; };
+		2090043D27F6228500F7CDA1 /* DataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2090043C27F6228500F7CDA1 /* DataTests.swift */; };
 		20AF10D127E4E9A60081EC07 /* NewMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF10D027E4E9A60081EC07 /* NewMatchView.swift */; };
 		20AF10D427E4EA450081EC07 /* AddChallengeMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF10D327E4EA450081EC07 /* AddChallengeMatchView.swift */; };
 		20AF10D627E4EA4B0081EC07 /* AddRegularMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF10D527E4EA4B0081EC07 /* AddRegularMatchView.swift */; };
@@ -107,6 +108,7 @@
 		207A41C527E28E3000BAC1A1 /* Rank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rank.swift; sourceTree = "<group>"; };
 		207A41C627E28E3000BAC1A1 /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		207A41C727E28E3000BAC1A1 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		2090043C27F6228500F7CDA1 /* DataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTests.swift; sourceTree = "<group>"; };
 		20AF10D027E4E9A60081EC07 /* NewMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchView.swift; sourceTree = "<group>"; };
 		20AF10D327E4EA450081EC07 /* AddChallengeMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChallengeMatchView.swift; sourceTree = "<group>"; };
 		20AF10D527E4EA4B0081EC07 /* AddRegularMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRegularMatchView.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 			isa = PBXGroup;
 			children = (
 				20F97A9427E2EF9C00CECF56 /* Base */,
+				2090043C27F6228500F7CDA1 /* DataTests.swift */,
 				20F97A9627E2EFAE00CECF56 /* RankingTests.swift */,
 			);
 			path = "Racket BracketTests";
@@ -571,6 +574,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20F97A9727E2EFAE00CECF56 /* RankingTests.swift in Sources */,
+				2090043D27F6228500F7CDA1 /* DataTests.swift in Sources */,
 				207A41A727E28DD000BAC1A1 /* BaseTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

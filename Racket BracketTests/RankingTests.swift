@@ -10,7 +10,7 @@ import XCTest
 
 class RankingTests: BaseTest {
     func testSingleMatchAdjustingRank() {
-        let (teamModel, rankingModel) = createMockObjects(numberOfPlayers: 2)
+        let (teamModel, rankingModel) = (createMockTeamModel(numberOfPlayers: 2), createMockRankingModel())
         let winner = teamModel.players[0]
         let loser = teamModel.players[1]
         let mockMatch = Match(winner: winner, loser: loser, matchType: .challenge, setScore: (8, 4))
@@ -22,7 +22,7 @@ class RankingTests: BaseTest {
     }
     
     func testRankAdjustmentAfterMultipleGames() {
-        let (teamModel, rankingModel) = createMockObjects(numberOfPlayers: 2)
+        let (teamModel, rankingModel) = (createMockTeamModel(numberOfPlayers: 2), createMockRankingModel())
         let playerOne = teamModel.players[0]
         let playerTwo = teamModel.players[1]
         
@@ -40,7 +40,7 @@ class RankingTests: BaseTest {
         // Player 1 still ranked first.
         // Game 3
         rankingModel.updateRanks(
-            with: Match(winner: playerTwo, loser: playerOne, matchType: .challenge, setScore: (5, 7)),
+            with: Match(winner: playerTwo, loser: playerOne, matchType: .challenge, setScore: (5, 9)),
             teamModel: teamModel)
         
         // Player 2 should end up ranked first.
@@ -48,7 +48,7 @@ class RankingTests: BaseTest {
     }
     
     func testLargeSimulatedGame() {
-        let (teamModel, rankingModel) = createMockObjects(numberOfPlayers: 10)
+        let (teamModel, rankingModel) = (createMockTeamModel(numberOfPlayers: 2), createMockRankingModel())
         
         // Play 200 games
         for _ in 1...200 {
