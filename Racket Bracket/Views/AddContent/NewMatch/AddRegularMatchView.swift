@@ -12,6 +12,7 @@ struct AddRegularMatchView: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State var player: Player?
+    @State var partner: Player?
     @State var isWinner: Bool = false
     @State var winnerPoints = ""
     @State var loserPoints = ""
@@ -22,7 +23,13 @@ struct AddRegularMatchView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            SelectPlayerSectionView(player: $player, title: "Player")
+            SelectPlayerSectionView(player: $player, title: "Player", exludePlayers: [partner])
+            SelectPlayerSectionView(
+                player: $partner,
+                title: "Doubles Partner",
+                subtitle: "optional",
+                exludePlayers: [player])
+            
             Checkbox(selected: $isWinner, title: "Won the match")
                 .padding(.bottom)
             
@@ -54,8 +61,23 @@ struct AddRegularMatchView: View {
         let winner: Player? = isWinner ? player : nil
         let loser: Player? = !isWinner ? player : nil
 
-        let match = Match(winner: winner, loser: loser, matchType: .challenge, setScore: (winnerPoints, loserPoints))
-        RankingModel.shared.updateRanks(with: match, teamModel: teamModel)
+        if let partner = partner {
+            let doublesMatch = DoublesMatch(
+                winner: winner,
+                loser: loser,
+                partner: partner,
+                setScore: (winnerPoints, loserPoints))
+            
+            RankingModel.shared.updateRanks(doublesMatch: doublesMatch, teamModel: teamModel)
+        } else {
+            let match = Match(
+                winner: winner,
+                loser: loser,
+                matchType: .regular,
+                setScore: (winnerPoints, loserPoints))
+            
+            RankingModel.shared.updateRanks(with: match, teamModel: teamModel)
+        }
     }
 }
 

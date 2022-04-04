@@ -15,6 +15,7 @@ struct CoachMainView: View {
     @State var showNewChallengeMatchView = false
     @State var showNewRegularMatchView = false
     @State var showJoinCodeView = false
+    @State var showConfirmDeleteTeam = false
     
     var body: some View {
         ZStack {
@@ -74,11 +75,34 @@ struct CoachMainView: View {
                                 Image(systemName: "eject")
                             }
                         }
+                        
+                        Button(role: .destructive) {
+                            showConfirmDeleteTeam = true
+                        } label: {
+                            Label {
+                                Text("Delete Team")
+                            } icon: {
+                                Image(systemName: "trash.fill")
+                            }
+                        }
                     } label: {
                         Image(systemName: "ellipsis")
                             .font(.title3)
                     }
                 }
+            }.confirmationDialog("", isPresented: $showConfirmDeleteTeam) {
+                Button(role: .destructive) {
+                    guard let coachId  = userModel.coachId else {
+                        return
+                    }
+                    
+                    userModel.logOut(teamModel: teamModel)
+                    teamModel.deleteTeam(coachId: coachId)
+                } label: {
+                    Text("Delete")
+                }
+            } message: {
+                Text("Are you sure you want to delete this team?")
             }
 
             if !showNewPlayerView && !showNewChallengeMatchView &&

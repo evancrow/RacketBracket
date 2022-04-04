@@ -28,7 +28,7 @@ struct AddButtonArrayView: View {
                 if showingAddOptions {
                     AddButtonView(config: .secondary(
                         title: "Match",
-                        symbol: .match)
+                        symbol: .regularMatch)
                     ) {
                         buttonTapped(.addRegularMatch)
                     }
@@ -42,7 +42,7 @@ struct AddButtonArrayView: View {
                     
                     AddButtonView(config: .secondary(
                         title: "Player",
-                        symbol: .player)
+                        symbol: .newPlayer)
                     ) {
                         buttonTapped(.addPlayer)
                     }

@@ -20,7 +20,9 @@ struct AddButtonUX {
 enum AddButtonSymbol: String {
     case plus = "plus"
     case close = "xmark"
-    case player = "person.fill"
-    case match = "hand.wave.fill"
-    case challengeMatch = "person.2.fill"
+    case newPlayer = "person.fill.badge.plus"
+  
+    case challengeMatch = "shield.fill"
+    case doublesMatch = "person.2.fill"
+    case regularMatch = "person.fill"
 }

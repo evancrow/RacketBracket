@@ -47,6 +47,6 @@ struct AddButtonView_Previews: PreviewProvider {
         
         AddButtonView(config: .primarySelected) {}
         
-        AddButtonView(config: .secondary(title: "Match", symbol: .match)) {}
+        AddButtonView(config: .secondary(title: "Match", symbol: .regularMatch)) {}
     }
 }

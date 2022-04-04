@@ -11,14 +11,23 @@ struct SelectPlayerSectionView: View {
     @Binding var player: Player?
     
     let title: String
+    var subtitle: String? = nil
     var exludePlayers: [Player?] = []
     
     var body: some View {
         VStack {
             HStack {
-                Text(title)
-                    .fontWeight(.semibold)
-                    .font(.title2)
+                VStack(alignment: .leading) {
+                    Text(title)
+                        .fontWeight(.semibold)
+                        .font(.title2)
+                    
+                    if let subtitle = subtitle {
+                        Text(subtitle)
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                    }
+                }
                 
                 Spacer()
             }
@@ -35,13 +44,13 @@ struct SelectPlayerSectionView: View {
                     RoundedButton(title: "Select", onTap: nil)
                 }
             }
-        }.padding(.vertical)
+        }.padding(.bottom)
     }
 }
 
 struct SelectPlayerSectionView_Previews: PreviewProvider {
     static var previews: some View {
-        SelectPlayerSectionView(player: .constant(nil), title: "Winner")
+        SelectPlayerSectionView(player: .constant(nil), title: "Winner", subtitle: "Add a winner")
         SelectPlayerSectionView(player: .constant(Player.mockPlayer()), title: "Loser")
     }
 }

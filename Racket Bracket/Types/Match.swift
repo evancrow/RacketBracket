@@ -7,7 +7,7 @@
 
 import Foundation
 
-fileprivate struct MatchArchiverKeys {
+struct MatchArchiverKeys {
     static let date = "date"
     static let winner = "winner"
     static let loser = "loser"
@@ -16,9 +16,32 @@ fileprivate struct MatchArchiverKeys {
     static let setScoreLoser = "setScoreLoser"
 }
 
-enum MatchType: String {
+enum MatchType: String, CaseIterable {
     case challenge = "challenge"
+    case doubles = "doubles"
     case regular = "regular"
+    
+    var description: String {
+        switch self {
+        case .challenge:
+            return "Challenge Matches"
+        case .doubles:
+            return "Double Matches"
+        case .regular:
+            return "Regular Matches"
+        }
+    }
+    
+    var imageName: String {
+        switch self {
+        case .challenge:
+            return AddButtonSymbol.challengeMatch.rawValue
+        case .doubles:
+            return AddButtonSymbol.doublesMatch.rawValue
+        case .regular:
+            return AddButtonSymbol.regularMatch.rawValue
+        }
+    }
 }
 
 class Match: NSObject, Identifiable, CloudSavable {
@@ -46,6 +69,10 @@ class Match: NSObject, Identifiable, CloudSavable {
             MatchArchiverKeys.setScoreWinner: setScore.0,
             MatchArchiverKeys.setScoreLoser: setScore.1
         ]
+    }
+    
+    func playerDidWin(_ player: Player) -> Bool {
+        winnerId == player.userId
     }
     
     // MARK: - init
@@ -121,6 +148,14 @@ extension Match {
             winner: winner ?? Player.mockPlayer(addMatch: false),
             loser: loser ?? Player.mockPlayer(addMatch: false),
             matchType: .regular,
+            setScore: (8, 6))
+    }
+    
+    static func mockRegularDoublesMatch(winner: Player? = nil, loser: Player? = nil, partner: Player) -> Match {
+        return DoublesMatch(
+            winner: winner ?? Player.mockPlayer(addMatch: false),
+            loser: loser ?? Player.mockPlayer(addMatch: false),
+            partner: partner,
             setScore: (8, 6))
     }
 }

@@ -70,26 +70,16 @@ struct PlayerDetailView: View {
     
     var filter: some View {
         Menu {
-            Button {
-                matchFilter = .regular
-            } label: {
-                Label {
-                    Text("Regular Matches")
-                } icon: {
-                    if matchFilter == .regular {
-                        Image(systemName: "checkmark")
-                    }
-                }
-            }
-            
-            Button {
-                matchFilter = .challenge
-            } label: {
-                Label {
-                    Text("Challenge Matches")
-                } icon: {
-                    if matchFilter == .challenge {
-                        Image(systemName: "checkmark")
+            ForEach(MatchType.allCases, id: \.self) { filter in
+                Button {
+                    matchFilter = filter
+                } label: {
+                    Label {
+                        Text(filter.description)
+                    } icon: {
+                        if matchFilter == filter {
+                            Image(systemName: "checkmark")
+                        }
                     }
                 }
             }

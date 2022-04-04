@@ -29,10 +29,25 @@ class RankingModel {
         let loserPoints = caluclatePoints(with: match, winner: winner, loser: loser, forWin: false)
       
         winner?.rank.rawScore += winnerPoints
-        winner?.matches.append(match)
+        winner?.matches.insert(match, at: 0)
         
         loser?.rank.rawScore += loserPoints
-        loser?.matches.append(match)
+        loser?.matches.insert(match, at: 0)
+        
+        updateRanks(teamModel: teamModel)
+    }
+    
+    public func updateRanks(doublesMatch: DoublesMatch, teamModel: TeamModel) {
+        updateRanks(with: doublesMatch, teamModel: teamModel)
+        
+        let winner = teamModel.players.first { $0.userId == doublesMatch.winnerId }
+        let partner = teamModel.players.first { $0.userId == doublesMatch.partnerId }
+        let didWin = winner != nil
+        
+        // For doubles
+        let partnerPoints = caluclatePoints(with: doublesMatch, winner: didWin ? partner : nil, loser: didWin ? nil : partner, forWin: didWin)
+        partner?.rank.rawScore += partnerPoints
+        partner?.matches.insert(doublesMatch, at: 0)
         
         updateRanks(teamModel: teamModel)
     }
@@ -42,8 +57,15 @@ class RankingModel {
         // The more points a player has, the higher ranked they are.
         let playersRanked = teamModel.players.sorted { $0.rank.rawScore > $1.rank.rawScore }
         for (index, player) in playersRanked.enumerated() {
-            let index = index + 1
-            player.rank.value = index
+            if playersRanked.indices.contains(index - 1),
+               playersRanked[index - 1].rank.rawScore == player.rank.rawScore {
+                // If the player has the same score as the player before them,
+                // they should have the same rank.
+                player.rank.value =  playersRanked[index - 1].rank.value
+            } else {
+                let index = index + 1
+                player.rank.value = index
+            }
         }
         
         teamModel.savePlayers()

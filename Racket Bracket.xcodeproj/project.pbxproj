@@ -10,6 +10,7 @@
 		2010E74027F55BF1002DEA3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010E73F27F55BF1002DEA3E /* AppDelegate.swift */; };
 		2010E74227F57C50002DEA3E /* JoinCodeViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010E74127F57C50002DEA3E /* JoinCodeViews.swift */; };
 		2010E79D27E44DD700D736A0 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010E79C27E44DD700D736A0 /* RoundedButton.swift */; };
+		202F719E27FB8CD500EC7F9F /* DoublesMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F719D27FB8CD500EC7F9F /* DoublesMatch.swift */; };
 		2076BAA727E3D31A0032B942 /* PlayerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076BAA627E3D31A0032B942 /* PlayerRowView.swift */; };
 		2079FE0E27E43A0A00F2DF19 /* PlayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079FE0D27E43A0A00F2DF19 /* PlayerListView.swift */; };
 		2079FE1127E43AEF00F2DF19 /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079FE1027E43AEF00F2DF19 /* AddButtonView.swift */; };
@@ -84,6 +85,7 @@
 		2010E73F27F55BF1002DEA3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2010E74127F57C50002DEA3E /* JoinCodeViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinCodeViews.swift; sourceTree = "<group>"; };
 		2010E79C27E44DD700D736A0 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		202F719D27FB8CD500EC7F9F /* DoublesMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublesMatch.swift; sourceTree = "<group>"; };
 		2076BAA627E3D31A0032B942 /* PlayerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRowView.swift; sourceTree = "<group>"; };
 		2079FE0D27E43A0A00F2DF19 /* PlayerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListView.swift; sourceTree = "<group>"; };
 		2079FE1027E43AEF00F2DF19 /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 			children = (
 				20F3C39E27F4C6DF00ADDC81 /* DataStorable.swift */,
 				207A41C627E28E3000BAC1A1 /* Match.swift */,
+				202F719D27FB8CD500EC7F9F /* DoublesMatch.swift */,
 				207A41C727E28E3000BAC1A1 /* Player.swift */,
 				207A41C527E28E3000BAC1A1 /* Rank.swift */,
 				20F3C39C27F4C36400ADDC81 /* User.swift */,
@@ -531,6 +534,7 @@
 				2010E74027F55BF1002DEA3E /* AppDelegate.swift in Sources */,
 				20F3C3A827F4D37400ADDC81 /* NewTeamView.swift in Sources */,
 				207A419827E28DCF00BAC1A1 /* ContentView.swift in Sources */,
+				202F719E27FB8CD500EC7F9F /* DoublesMatch.swift in Sources */,
 				20AF10D827E4EC210081EC07 /* Checkbox.swift in Sources */,
 				2079FE1427E43B2100F2DF19 /* AddButtonUX.swift in Sources */,
 				2010E74227F57C50002DEA3E /* JoinCodeViews.swift in Sources */,

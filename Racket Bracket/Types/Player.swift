@@ -34,11 +34,11 @@ class Player: NSObject, Identifiable, ObservableObject, CloudSavable {
     @Published var matches: [Match]
     
     var matchesWon: [Match] {
-        matches.filter { $0.winnerId == self.userId }
+        matches.filter { $0.playerDidWin(self)  }
     }
     
     var matchesLost: [Match] {
-        matches.filter { $0.loserId == self.userId }
+        matches.filter { !$0.playerDidWin(self) }
     }
     
     var dictionaryObject: [String : Any] {
@@ -70,8 +70,13 @@ class Player: NSObject, Identifiable, ObservableObject, CloudSavable {
         let rankRawScore = rank[PlayerArchiverKeys.rankRawScore] as? Int ?? 0
         
         let matchesData = data[PlayerArchiverKeys.matches] as? [[String: Any]] ?? []
-        let matches = matchesData.map {
-            Match(data: $0)
+        let matches: [Match] = matchesData.map {
+            let matchType = $0[MatchArchiverKeys.matchType] as? String ?? ""
+            if matchType == MatchType.doubles.rawValue {
+                return DoublesMatch(data: $0)
+            } else {
+                return Match(data: $0)
+            }
         }
         
         self.userId = userId
@@ -101,12 +106,20 @@ extension Player {
             matches: [])
         
         if addMatch {
-            player.matches.append(Match.mockRegularMatch(winner: player))
+            // Challenge
             player.matches.append(Match.mockChallengeMatch(winner: player))
-            player.matches.append(Match.mockRegularMatch(loser: player))
             player.matches.append(Match.mockChallengeMatch(winner: player))
             player.matches.append(Match.mockChallengeMatch(loser: player))
+            
+            // Regular
             player.matches.append(Match.mockRegularMatch(winner: player))
+            player.matches.append(Match.mockRegularMatch(winner: player))
+            player.matches.append(Match.mockRegularMatch(loser: player))
+            
+            // Doubles
+            player.matches.append(Match.mockRegularDoublesMatch(winner: player, partner: mockPlayer(addMatch: false)))
+            player.matches.append(Match.mockRegularDoublesMatch(winner: player, partner: mockPlayer(addMatch: false)))
+            player.matches.append(Match.mockRegularDoublesMatch(loser: player, partner: mockPlayer(addMatch: false)))
         }
         
         return player

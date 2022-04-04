@@ -27,11 +27,7 @@ class TeamModel: DataStorable<Player>, ObservableObject {
         }
     }
     
-    @Published var players: [Player] = [] {
-        didSet {
-            savePlayers()
-        }
-    }
+    @Published var players: [Player] = []
     
     @Published var detailPlayer: Player? {
         didSet {
@@ -72,6 +68,8 @@ class TeamModel: DataStorable<Player>, ObservableObject {
             rank: Rank(value: 0, rawScore: PlayerDefaults.basePoints),
             matches: [])
         )
+        
+        savePlayers()
     }
     
     // MARK: - Team Methods
@@ -84,6 +82,13 @@ class TeamModel: DataStorable<Player>, ObservableObject {
     public func clearTeam() {
         self.teamName = nil
         self.players = []
+    }
+    
+    public func deleteTeam(coachId: String) {
+        CloudDataModel.shared.upload(
+            object: [:],
+            underKey: CloudKeys.teams,
+            childName: coachId)
     }
     
     // MARK: - Data Methods

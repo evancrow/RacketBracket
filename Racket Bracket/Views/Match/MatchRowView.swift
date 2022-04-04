@@ -14,7 +14,7 @@ struct MatchRowView: View {
     var player: Player
     
     var didWin: Bool {
-        match.winnerId == player.userId
+        match.playerDidWin(player)
     }
     
     var winner: Player? {
@@ -43,11 +43,39 @@ struct MatchRowView: View {
         return nil
     }
     
+    // For Doubles
+    var isDoublesMatch: Bool {
+        return match is DoublesMatch
+    }
+    
+    var partner: Player? {
+        guard let doublesMatch = match as? DoublesMatch else {
+            return nil
+        }
+        
+        if doublesMatch.partnerId != player.userId {
+            return teamModel.players.first { $0.userId == doublesMatch.partnerId }
+        } else if didWin {
+            return winner
+        } else {
+            return loser
+        }
+    }
+    
+    var otherPlayer: Player? {
+        isDoublesMatch ? partner : opponent
+    }
+
     @State var showOpponentNavigationView = false
     
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 5) {
+                Text(match.date.formatted(date: .abbreviated, time: .omitted))
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+                    .padding(.bottom, 4)
+                
                 HStack {
                     Text(didWin ? "Winner" : "Loser")
                         .fontWeight(.semibold)
@@ -58,11 +86,11 @@ struct MatchRowView: View {
                 }.font(.title2)
                 
                 HStack {
-                    if let opponent = opponent {
-                        Text("vs. ")
+                    if let otherPlayer = otherPlayer {
+                        Text(isDoublesMatch ? "with " : "vs. ")
                             .fontWeight(.regular)
                         
-                        Text(opponent.fullName)
+                        Text(otherPlayer.fullName)
                             .fontWeight(.medium)
                             .foregroundColor(.blue)
                             .onTapGesture {
@@ -72,7 +100,7 @@ struct MatchRowView: View {
                         Spacer()
                         
                         NavigationLink(isActive: $showOpponentNavigationView) {
-                            PlayerDetailView(player: opponent)
+                            PlayerDetailView(player: otherPlayer)
                         } label: {
                             EmptyView()
                         }.opacity(0)
@@ -83,7 +111,7 @@ struct MatchRowView: View {
             }
             
             Spacer()
-            
+         
             RankChange(pointsGained: RankingModel.shared.caluclatePoints(
                 with: match,
                 winner: winner,
