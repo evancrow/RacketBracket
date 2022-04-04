@@ -53,7 +53,7 @@ struct NewPlayerView: View {
         }
         .padding(.horizontal)
         .padding(.bottom)
-        .navigationTitle("New Player")
+        .navigationTitle(editing ? "Edit Player" : "New Player")
         .onAppear() {
             if let player = player {
                 playerFirstName = player.firstName
