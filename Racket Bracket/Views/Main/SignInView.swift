@@ -1,5 +1,5 @@
 //
-//  JoinView.swift
+//  SignInView.swift
 //  Racket Bracket
 //
 //  Created by Evan Crow on 3/30/22.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct JoinView: View {
+struct SignInView: View {
     @State var showCoachOptions = false
     @State var showJoinTeamView = false
     @State var showNewTeamView = false
@@ -68,13 +68,13 @@ struct JoinView: View {
             }
             .padding()
             .navigationBarHidden(true)
-        }
+        }.navigationViewStyle(.stack)
     }
 }
 
-struct JoinView_Previews: PreviewProvider {
+struct SignInView_Previews: PreviewProvider {
     static var previews: some View {
-        JoinView()
-        JoinView(showCoachOptions: true)
+        SignInView()
+        SignInView(showCoachOptions: true)
     }
 }

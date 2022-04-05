@@ -47,7 +47,7 @@ struct PlayerMainView: View {
                         .font(.title3)
                 }
             }
-        }
+        }.navigationViewStyle(.stack)
     }
 }
 

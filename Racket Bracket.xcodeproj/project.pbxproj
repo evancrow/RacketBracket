@@ -50,7 +50,7 @@
 		20F3C39D27F4C36400ADDC81 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C39C27F4C36400ADDC81 /* User.swift */; };
 		20F3C39F27F4C6DF00ADDC81 /* DataStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C39E27F4C6DF00ADDC81 /* DataStorable.swift */; };
 		20F3C3A227F4CA6D00ADDC81 /* CoachMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C3A127F4CA6D00ADDC81 /* CoachMainView.swift */; };
-		20F3C3A427F4CBEE00ADDC81 /* JoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C3A327F4CBEE00ADDC81 /* JoinView.swift */; };
+		20F3C3A427F4CBEE00ADDC81 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C3A327F4CBEE00ADDC81 /* SignInView.swift */; };
 		20F3C3A627F4CC0100ADDC81 /* PlayerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C3A527F4CC0100ADDC81 /* PlayerMainView.swift */; };
 		20F3C3A827F4D37400ADDC81 /* NewTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C3A727F4D37400ADDC81 /* NewTeamView.swift */; };
 		20F3C3AB27F4D5A300ADDC81 /* JoinTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C3AA27F4D5A300ADDC81 /* JoinTeamView.swift */; };
@@ -128,7 +128,7 @@
 		20F3C39C27F4C36400ADDC81 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		20F3C39E27F4C6DF00ADDC81 /* DataStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorable.swift; sourceTree = "<group>"; };
 		20F3C3A127F4CA6D00ADDC81 /* CoachMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachMainView.swift; sourceTree = "<group>"; };
-		20F3C3A327F4CBEE00ADDC81 /* JoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinView.swift; sourceTree = "<group>"; };
+		20F3C3A327F4CBEE00ADDC81 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		20F3C3A527F4CC0100ADDC81 /* PlayerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMainView.swift; sourceTree = "<group>"; };
 		20F3C3A727F4D37400ADDC81 /* NewTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeamView.swift; sourceTree = "<group>"; };
 		20F3C3AA27F4D5A300ADDC81 /* JoinTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTeamView.swift; sourceTree = "<group>"; };
@@ -363,7 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				20F3C3A127F4CA6D00ADDC81 /* CoachMainView.swift */,
-				20F3C3A327F4CBEE00ADDC81 /* JoinView.swift */,
+				20F3C3A327F4CBEE00ADDC81 /* SignInView.swift */,
 				20F3C3A527F4CC0100ADDC81 /* PlayerMainView.swift */,
 			);
 			path = Main;
@@ -562,7 +562,7 @@
 				207A41C927E28E3000BAC1A1 /* TeamModel.swift in Sources */,
 				20D023DD27EECDD1000FDEF0 /* ProgressBar.swift in Sources */,
 				20F3C39B27F4C35E00ADDC81 /* UserModel.swift in Sources */,
-				20F3C3A427F4CBEE00ADDC81 /* JoinView.swift in Sources */,
+				20F3C3A427F4CBEE00ADDC81 /* SignInView.swift in Sources */,
 				20F3C39F27F4C6DF00ADDC81 /* DataStorable.swift in Sources */,
 				20D023E727EEE5D0000FDEF0 /* RankChange.swift in Sources */,
 				207A419627E28DCF00BAC1A1 /* Racket_BracketApp.swift in Sources */,
@@ -727,7 +727,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Racket Bracket/Preview Content\"";
 				DEVELOPMENT_TEAM = 659X72BL55;
 				ENABLE_PREVIEWS = YES;
@@ -735,6 +735,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -756,7 +757,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Racket Bracket/Preview Content\"";
 				DEVELOPMENT_TEAM = 659X72BL55;
 				ENABLE_PREVIEWS = YES;
@@ -764,6 +765,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

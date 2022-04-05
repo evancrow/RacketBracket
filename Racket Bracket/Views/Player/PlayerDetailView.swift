@@ -172,15 +172,14 @@ struct PlayerDetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
             PlayerDetailView(player: Player.mockPlayer())
-            
-        }
+        }.navigationViewStyle(.stack)
         
         NavigationView {
             PlayerDetailView(player: Player.mockPlayer(), matchFilter: .regular)
-        }
+        }.navigationViewStyle(.stack)
         
         NavigationView {
             PlayerDetailView(player: Player.mockPlayer(addMatch: false))
-        }
+        }.navigationViewStyle(.stack)
     }
 }

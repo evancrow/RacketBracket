@@ -90,7 +90,9 @@ struct CoachMainView: View {
                             .font(.title3)
                     }
                 }
-            }.confirmationDialog("", isPresented: $showConfirmDeleteTeam) {
+            }
+            .navigationViewStyle(.stack)
+            .confirmationDialog("", isPresented: $showConfirmDeleteTeam) {
                 Button(role: .destructive) {
                     guard let coachId  = userModel.coachId else {
                         return
