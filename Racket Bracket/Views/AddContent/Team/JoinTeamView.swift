@@ -29,7 +29,11 @@ struct JoinTeamView: View {
     var body: some View {
         VStack(alignment: .leading) {
             if loading {
-                ProgressView()
+                HStack {
+                    Spacer()
+                    ProgressView()
+                    Spacer()
+                }
             } else {
                 RoundedTextField(placeholder: "Your join code", textFieldValue: $joinCode)
                 

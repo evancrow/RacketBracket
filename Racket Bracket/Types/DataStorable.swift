@@ -17,11 +17,13 @@ class DataStorable<DataType: Any> {
     
     // MARK: - Storing
     public func store(data: DataType?) {
-        storeDataToStorage(try? NSKeyedArchiver.archivedData(withRootObject: [data], requiringSecureCoding: false))
+        storeDataToStorage(try? NSKeyedArchiver.archivedData(
+            withRootObject: (data == nil ? nil : [data]) as Any, requiringSecureCoding: false))
     }
     
-    public func store(data: [DataType]) {
-        storeDataToStorage(try? NSKeyedArchiver.archivedData(withRootObject: data, requiringSecureCoding: false))
+    public func store(data: [DataType]?) {
+        storeDataToStorage(try? NSKeyedArchiver.archivedData(
+            withRootObject: data as Any, requiringSecureCoding: false))
     }
     
     private func storeDataToStorage(_ data: Data?) {

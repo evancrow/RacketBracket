@@ -83,7 +83,10 @@ struct PlayerListView: View {
     
     private func delete(with indexSet: IndexSet) {
         DispatchQueue.main.async {
-            indexSet.forEach { teamModel.players.remove(at: $0) }
+            indexSet.forEach {
+                teamModel.players.remove(at: $0)
+                teamModel.savePlayers()
+            }
         }
     }
     

@@ -17,13 +17,17 @@ fileprivate struct TeamCloudKeys {
     static let players = "Players"
 }
 
-class TeamModel: DataStorable<Player>, ObservableObject {
+fileprivate struct UserDefaultKeys {
+    static let teamName = "teamName"
+}
+
+class TeamModel: ObservableObject {
     // MARK: - Properties
     private let userModel: UserModel?
     
     @Published var teamName: String? {
         didSet {
-            UserDefaults.standard.set(teamName, forKey: "teamName")
+            UserDefaults.standard.set(teamName, forKey: UserDefaultKeys.teamName)
         }
     }
     
@@ -93,8 +97,6 @@ class TeamModel: DataStorable<Player>, ObservableObject {
     
     // MARK: - Data Methods
     public func savePlayers() {
-        store(data: players)
-        
         guard userModel?.canWriteDate ?? false, let coachId = userModel?.coachId, let teamName = teamName else {
             return
         }
@@ -134,17 +136,14 @@ class TeamModel: DataStorable<Player>, ObservableObject {
     
     // MARK: - init
     init(userModel: UserModel? = nil, addMockPlayers: Bool = false) {
-        self.teamName = UserDefaults.standard.string(forKey: "teamName")
+        self.teamName = UserDefaults.standard.string(forKey: UserDefaultKeys.teamName)
         self.userModel = userModel
-        
-        super.init(extensionPath: DataExtensionPaths.players)
         
         if addMockPlayers {
             for _ in 0...20 {
                 players.append(Player.mockPlayer())
             }
         } else {
-            self.players = retrieveDataAsArray() ?? []
             retrieveDataFromCloud()
         }
     }
