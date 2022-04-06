@@ -40,6 +40,7 @@
 		20AF10DA27E4FBFA0081EC07 /* SelectPlayerSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF10D927E4FBFA0081EC07 /* SelectPlayerSectionView.swift */; };
 		20AF10DE27E502F30081EC07 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20AF10DD27E502F30081EC07 /* ViewExtensions.swift */; };
 		20B2E6BB27E6757300EE9120 /* SetScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B2E6BA27E6757300EE9120 /* SetScoreView.swift */; };
+		20BC9AF427FDF2EC00A0E21E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20BC9AF327FDF2EC00A0E21E /* GoogleService-Info.plist */; };
 		20D023DB27EEAEA6000FDEF0 /* PlayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D023DA27EEAEA6000FDEF0 /* PlayerDetailView.swift */; };
 		20D023DD27EECDD1000FDEF0 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D023DC27EECDD1000FDEF0 /* ProgressBar.swift */; };
 		20D023DF27EECF02000FDEF0 /* PlayerWinLoseRationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20D023DE27EECF02000FDEF0 /* PlayerWinLoseRationView.swift */; };
@@ -54,7 +55,6 @@
 		20F3C3A627F4CC0100ADDC81 /* PlayerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C3A527F4CC0100ADDC81 /* PlayerMainView.swift */; };
 		20F3C3A827F4D37400ADDC81 /* NewTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C3A727F4D37400ADDC81 /* NewTeamView.swift */; };
 		20F3C3AB27F4D5A300ADDC81 /* JoinTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3C3AA27F4D5A300ADDC81 /* JoinTeamView.swift */; };
-		20F3C3AD27F4E1CD00ADDC81 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 20F3C3AC27F4E1CD00ADDC81 /* GoogleService-Info.plist */; };
 		20F3C3B027F4E25800ADDC81 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 20F3C3AF27F4E25800ADDC81 /* FirebaseAnalytics */; };
 		20F3C3B227F4E25800ADDC81 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 20F3C3B127F4E25800ADDC81 /* FirebaseAuth */; };
 		20F3C3B427F4E25800ADDC81 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 20F3C3B327F4E25800ADDC81 /* FirebaseDatabase */; };
@@ -118,6 +118,7 @@
 		20AF10D927E4FBFA0081EC07 /* SelectPlayerSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlayerSectionView.swift; sourceTree = "<group>"; };
 		20AF10DD27E502F30081EC07 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		20B2E6BA27E6757300EE9120 /* SetScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetScoreView.swift; sourceTree = "<group>"; };
+		20BC9AF327FDF2EC00A0E21E /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "GoogleService-Info.plist"; path = "Racket Bracket/GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		20D023DA27EEAEA6000FDEF0 /* PlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailView.swift; sourceTree = "<group>"; };
 		20D023DC27EECDD1000FDEF0 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		20D023DE27EECF02000FDEF0 /* PlayerWinLoseRationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerWinLoseRationView.swift; sourceTree = "<group>"; };
@@ -132,7 +133,6 @@
 		20F3C3A527F4CC0100ADDC81 /* PlayerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerMainView.swift; sourceTree = "<group>"; };
 		20F3C3A727F4D37400ADDC81 /* NewTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTeamView.swift; sourceTree = "<group>"; };
 		20F3C3AA27F4D5A300ADDC81 /* JoinTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinTeamView.swift; sourceTree = "<group>"; };
-		20F3C3AC27F4E1CD00ADDC81 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		20F3C3B927F4E3A300ADDC81 /* CloudDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudDataModel.swift; sourceTree = "<group>"; };
 		20F97A9627E2EFAE00CECF56 /* RankingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RankingTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,8 +170,9 @@
 		2010E73E27F55BE7002DEA3E /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				207A419527E28DCF00BAC1A1 /* Racket_BracketApp.swift */,
 				2010E73F27F55BF1002DEA3E /* AppDelegate.swift */,
+				207A419527E28DCF00BAC1A1 /* Racket_BracketApp.swift */,
+				20BC9AF327FDF2EC00A0E21E /* GoogleService-Info.plist */,
 			);
 			path = Application;
 			sourceTree = "<group>";
@@ -275,7 +276,6 @@
 			isa = PBXGroup;
 			children = (
 				207A419C27E28DD000BAC1A1 /* Preview Assets.xcassets */,
-				20F3C3AC27F4E1CD00ADDC81 /* GoogleService-Info.plist */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -502,7 +502,7 @@
 			files = (
 				207A419D27E28DD000BAC1A1 /* Preview Assets.xcassets in Resources */,
 				207A419A27E28DD000BAC1A1 /* Assets.xcassets in Resources */,
-				20F3C3AD27F4E1CD00ADDC81 /* GoogleService-Info.plist in Resources */,
+				20BC9AF427FDF2EC00A0E21E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,7 +727,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Racket Bracket/Preview Content\"";
 				DEVELOPMENT_TEAM = 659X72BL55;
 				ENABLE_PREVIEWS = YES;
@@ -757,7 +757,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Racket Bracket/Preview Content\"";
 				DEVELOPMENT_TEAM = 659X72BL55;
 				ENABLE_PREVIEWS = YES;

@@ -10,9 +10,13 @@ import SwiftUI
 struct PlayerListView: View {
     @Environment(\.presentationMode) var presentationMode
     @EnvironmentObject var teamModel: TeamModel
+    @EnvironmentObject var userModel: UserModel
     
     @State private var nameFilter = ""
     @State private var filteredPlayers: [Player] = []
+    
+    @State private var showConfirmDelete = false
+    @State private var playerToDelete: Player? = nil
     
     var detailPlayer: Player? = nil
     var excluding: [Player?] = []
@@ -36,7 +40,7 @@ struct PlayerListView: View {
                         presentationMode.wrappedValue.dismiss()
                     }
                 } label: {
-                    PlayerRowView(player: detailPlayer)
+                    PlayerRowView(player: detailPlayer, altName: "Your Profile")
                         .id(detailPlayer.id)
                 }
             }
@@ -58,7 +62,7 @@ struct PlayerListView: View {
             }
             
             Section {
-                ForEach(filteredPlayers.filter { $0.matches.count == 0 }) { player in
+                let players = ForEach(filteredPlayers.filter { $0.matches.count == 0 }) { player in
                     Button {
                         if let playerSelected = playerSelected {
                             playerSelected(player)
@@ -68,7 +72,13 @@ struct PlayerListView: View {
                         PlayerRowView(player: player)
                             .id(player.id)
                     }
-                }.onDelete(perform: delete).id(UUID())
+                }
+                
+                if !selectMode && userModel.canWriteDate {
+                    players.onDelete(perform: delete).id(UUID())
+                } else {
+                    players
+                }
             } header: {
                 Text("Not Ranked (no games played)")
             }
@@ -78,15 +88,28 @@ struct PlayerListView: View {
             updateFilteredPlayers()
         }.refreshable {
             teamModel.retrieveDataFromCloud()
+        }.confirmationDialog("Delete Player?", isPresented: $showConfirmDelete) {
+            Button(role: .destructive) {
+                DispatchQueue.main.async {
+                    teamModel.players.removeAll { player in
+                        player == playerToDelete
+                    }
+                    
+                    teamModel.savePlayers()
+                }
+            } label: {
+                Text("Delete")
+            }
+        } message: {
+            Text("Are you sure you want to delete this player?")
         }
     }
     
     private func delete(with indexSet: IndexSet) {
-        DispatchQueue.main.async {
-            indexSet.forEach {
-                teamModel.players.remove(at: $0)
-                teamModel.savePlayers()
-            }
+        showConfirmDelete = true
+
+        indexSet.forEach {
+            playerToDelete =  teamModel.players[$0]
         }
     }
     

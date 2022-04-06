@@ -20,6 +20,8 @@ class UserModel: DataStorable<User>, ObservableObject {
         }
     }
     
+    @Published var showForcedLoggedOutAlert = false
+    
     var coachId: String? {
         if let currentUser = currentUser?.id {
             return String(currentUser.prefix(UserModelDefaults.codeLength))
@@ -60,9 +62,13 @@ class UserModel: DataStorable<User>, ObservableObject {
     }
     
     // MARK: - Logging Out
-    public func logOut(teamModel: TeamModel) {
+    public func logOut(teamModel: TeamModel, forced: Bool = false) {
         currentUser = nil
         teamModel.clearTeam()
+        
+        if forced {
+            showForcedLoggedOutAlert = true
+        }
     }
     
     // MARK: - init

@@ -115,9 +115,11 @@ class TeamModel: ObservableObject {
             return
         }
         
-        CloudDataModel.shared.retrieveData(underKey: CloudKeys.teams, childName: coachId) { data in
+        CloudDataModel.shared.retrieveData(underKey: CloudKeys.teams, childName: coachId) { [self] data in
             guard let data = data else {
                 completion(false)
+                userModel?.logOut(teamModel: self, forced: true)
+                
                 return
             }
 
@@ -127,6 +129,14 @@ class TeamModel: ObservableObject {
                 Player(data: $0)
             }
             
+            // Log the user out if they are a player and no longer apart of the team.
+            if let userModel = userModel, let currentUser = userModel.currentUser {
+                let userIds = players.map { $0.userId }
+                if !userModel.canWriteDate && !userIds.contains(currentUser.id) {
+                    userModel.logOut(teamModel: self, forced: true)
+                }
+            }
+           
             self.teamName = teamName
             self.players = players
             

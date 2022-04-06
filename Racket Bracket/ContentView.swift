@@ -25,6 +25,15 @@ struct ContentView: View {
         }
         .environmentObject(teamModel)
         .environmentObject(userModel)
+        .alert("You've Been Logged Out", isPresented: $userModel.showForcedLoggedOutAlert) {
+            Button {
+                userModel.showForcedLoggedOutAlert = false
+            } label: {
+                Text("Okay")
+            }
+        } message: {
+            Text("You might have been removed from the team or it no longer exists.")
+        }
     }
     
     init() {

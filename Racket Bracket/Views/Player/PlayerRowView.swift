@@ -9,11 +9,12 @@ import SwiftUI
 
 struct PlayerRowView: View {
     var player: Player
+    var altName: String? = nil
     
     var body: some View {
         HStack {
             VStack(alignment: .leading) {
-                Text(player.fullName)
+                Text(altName ?? player.fullName)
                     .font(.title)
                     .fontWeight(.bold)
                 
