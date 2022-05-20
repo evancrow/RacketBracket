@@ -13,6 +13,7 @@ struct NewPlayerView: View {
     
     @State var playerFirstName = ""
     @State var playerLastName = ""
+    @FocusState var focusFirstName: Bool
     
     var player: Player? = nil
     
@@ -26,7 +27,7 @@ struct NewPlayerView: View {
     
     var body: some View {
         VStack {
-            RoundedTextField(placeholder: "Player first name", textFieldValue: $playerFirstName)
+            RoundedTextField(placeholder: "Player first name", textFieldValue: $playerFirstName, isFocused: _focusFirstName)
             RoundedTextField(placeholder: "Player last name", textFieldValue: $playerLastName)
             
             Spacer()
@@ -36,6 +37,7 @@ struct NewPlayerView: View {
                     teamModel.addPlayer(with: playerFirstName, lastName: playerLastName)
                     playerFirstName = ""
                     playerLastName = ""
+                    focusFirstName = true
                 }.disabled(disabled)
             }
             

@@ -55,7 +55,9 @@ class RankingModel {
     private func updateRanks(teamModel: TeamModel) {
         // Update all the players ranking with the new scores.
         // The more points a player has, the higher ranked they are.
-        let playersRanked = teamModel.players.sorted { $0.rank.rawScore > $1.rank.rawScore }
+        var playersRanked = teamModel.players.sorted { $0.rank.rawScore > $1.rank.rawScore }
+        playersRanked = playersRanked.filter { $0.matches.count > 0 }
+        
         for (index, player) in playersRanked.enumerated() {
             if playersRanked.indices.contains(index - 1),
                playersRanked[index - 1].rank.rawScore == player.rank.rawScore {

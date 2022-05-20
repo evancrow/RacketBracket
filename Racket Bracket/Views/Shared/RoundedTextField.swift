@@ -17,9 +17,11 @@ struct RoundedTextField: View {
     var useNumberPad = false
     
     @Binding var textFieldValue: String
+    @FocusState var isFocused: Bool
     
     var body: some View {
         TextField(placeholder, text: $textFieldValue)
+            .focused($isFocused)
             .keyboardType(useNumberPad ? .numberPad : .default)
             .padding()
             .background(
