@@ -27,6 +27,7 @@ struct AddChallengeMatchView: View {
             SelectPlayerSectionView(player: $loser, title: "Loser", exludePlayers: [winner])
             
             SetScoreView(winnerPoints: $winnerPoints, loserPoints: $loserPoints)
+                .padding(.bottom)
            
             Spacer()
             
@@ -44,7 +45,7 @@ struct AddChallengeMatchView: View {
                 createMatchAndUpdateRanks()
                 presentationMode.wrappedValue.dismiss()
             }.disabled(!canContinue)
-        }.padding(.horizontal)
+        }.padding([.horizontal, .bottom])
     }
     
     private func createMatchAndUpdateRanks() {

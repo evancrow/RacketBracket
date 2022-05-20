@@ -11,7 +11,7 @@ struct NewMatchView: View {
     let matchType: MatchType
     
     var body: some View {
-        Group {
+        ScrollView(showsIndicators: false) {
             if matchType == .challenge {
                 AddChallengeMatchView()
                     .navigationTitle("New Challenge Match")

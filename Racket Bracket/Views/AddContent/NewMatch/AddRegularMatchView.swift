@@ -34,6 +34,7 @@ struct AddRegularMatchView: View {
                 .padding(.bottom)
             
             SetScoreView(winnerPoints: $winnerPoints, loserPoints: $loserPoints)
+                .padding(.bottom)
             
             Spacer()
             
@@ -48,7 +49,7 @@ struct AddRegularMatchView: View {
                 createMatchAndUpdateRanks()
                 presentationMode.wrappedValue.dismiss()
             }.disabled(!canContinue)
-        }.padding(.horizontal)
+        }.padding([.horizontal, .bottom])
     }
     
     private func createMatchAndUpdateRanks() {

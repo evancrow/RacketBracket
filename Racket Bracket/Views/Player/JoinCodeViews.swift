@@ -10,16 +10,31 @@ import SwiftUI
 struct JoinCodeViews: View {
     @EnvironmentObject var teamModel: TeamModel
     
+    @State private var nameFilter = ""
+    var filteredPlayers: [Player] {
+        let allPlayers = teamModel.players.sorted { $0.fullName < $1.fullName }
+        return nameFilter.isEmpty ? allPlayers : allPlayers.filter { $0.fullName.contains(nameFilter) }
+    }
+    
     var body: some View {
-        List(teamModel.players.sorted { $0.fullName < $1.fullName }) { player in
-            VStack(alignment: .leading) {
-                Text(player.fullName)
-                    .font(.title2)
-                    .bold()
-                
-                Text(player.userId)
-                    .font(.title)
-            }.padding()
+        List {
+            Section {
+                RoundedTextField(placeholder: "Search a name", textFieldValue: $nameFilter)
+                    .listRowInsets(EdgeInsets())
+            }
+            
+            Section {
+                ForEach(filteredPlayers) { player in
+                    VStack(alignment: .leading) {
+                        Text(player.fullName)
+                            .font(.title2)
+                            .bold()
+                        
+                        Text(player.userId)
+                            .font(.title)
+                    }.padding()
+                }
+            }
         }.navigationTitle("Join Codes")
     }
 }
