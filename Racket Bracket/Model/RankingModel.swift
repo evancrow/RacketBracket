@@ -52,6 +52,10 @@ class RankingModel {
         updateRanks(teamModel: teamModel)
     }
     
+    public func updateRanksAfterPlayersChange(teamModel: TeamModel) {
+        updateRanks(teamModel: teamModel)
+    }
+    
     private func updateRanks(teamModel: TeamModel) {
         // Update all the players ranking with the new scores.
         // The more points a player has, the higher ranked they are.

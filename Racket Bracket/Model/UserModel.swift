@@ -30,7 +30,7 @@ class UserModel: DataStorable<User>, ObservableObject {
         return nil
     }
     
-    var canWriteDate: Bool {
+    var canWriteData: Bool {
         if let currentUser = currentUser, currentUser.type == .coach {
             return true
         }

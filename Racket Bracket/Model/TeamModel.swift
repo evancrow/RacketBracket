@@ -76,6 +76,13 @@ class TeamModel: ObservableObject {
         savePlayers()
     }
     
+    public func deletePlayer(_ player: Player) {
+        players.removeAll { $0 == player }
+        
+        // Updates the ranks after a player is deleted, and saves the changes.
+        RankingModel.shared.updateRanksAfterPlayersChange(teamModel: self)
+    }
+    
     // MARK: - Team Methods
     public func createTeam(with name: String) {
         self.teamName = name
@@ -97,7 +104,7 @@ class TeamModel: ObservableObject {
     
     // MARK: - Data Methods
     public func savePlayers() {
-        guard userModel?.canWriteDate ?? false, let coachId = userModel?.coachId, let teamName = teamName else {
+        guard userModel?.canWriteData ?? false, let coachId = userModel?.coachId, let teamName = teamName else {
             return
         }
         
@@ -132,7 +139,7 @@ class TeamModel: ObservableObject {
             // Log the user out if they are a player and no longer apart of the team.
             if let userModel = userModel, let currentUser = userModel.currentUser {
                 let userIds = players.map { $0.userId }
-                if !userModel.canWriteDate && !userIds.contains(currentUser.id) {
+                if !userModel.canWriteData && !userIds.contains(currentUser.id) {
                     userModel.logOut(teamModel: self, forced: true)
                 }
             }

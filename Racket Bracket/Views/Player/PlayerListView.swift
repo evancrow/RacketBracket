@@ -15,9 +15,6 @@ struct PlayerListView: View {
     @State private var nameFilter = ""
     @State private var filteredPlayers: [Player] = []
     
-    @State private var showConfirmDelete = false
-    @State private var playerToDelete: Player? = nil
-    
     var detailPlayer: Player? = nil
     var excluding: [Player?] = []
     var selectMode = false
@@ -56,7 +53,7 @@ struct PlayerListView: View {
                         PlayerRowView(player: player)
                             .id(player.id)
                     }
-                }.onDelete(perform: delete).id(UUID())
+                }.id(UUID())
             } header: {
                 Text("Ranked")
             }
@@ -74,11 +71,7 @@ struct PlayerListView: View {
                     }
                 }
                 
-                if !selectMode && userModel.canWriteDate {
-                    players.onDelete(perform: delete).id(UUID())
-                } else {
-                    players
-                }
+                players.id(UUID())
             } header: {
                 Text("Not Ranked (no games played)")
             }
@@ -88,28 +81,6 @@ struct PlayerListView: View {
             updateFilteredPlayers()
         }.refreshable {
             teamModel.retrieveDataFromCloud()
-        }.confirmationDialog("Delete Player?", isPresented: $showConfirmDelete) {
-            Button(role: .destructive) {
-                DispatchQueue.main.async {
-                    teamModel.players.removeAll { player in
-                        player == playerToDelete
-                    }
-                    
-                    teamModel.savePlayers()
-                }
-            } label: {
-                Text("Delete")
-            }
-        } message: {
-            Text("Are you sure you want to delete this player?")
-        }
-    }
-    
-    private func delete(with indexSet: IndexSet) {
-        showConfirmDelete = true
-
-        indexSet.forEach {
-            playerToDelete =  teamModel.players[$0]
         }
     }
     

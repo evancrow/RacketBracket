@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct PlayerDetailView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     @ObservedObject var player: Player
     @EnvironmentObject var teamModel: TeamModel
     @EnvironmentObject var userModel: UserModel
     
-    @State var nameHeight: CGFloat = 0
-    @State var renaming = false
     @State var matchFilter: MatchType?
+    @State private var nameHeight: CGFloat = 0
+    @State private var renaming = false
+    @State private var showConfirmDelete = false
     
     var matches: [Match] {
         if let matchFilter = matchFilter {
@@ -122,7 +125,7 @@ struct PlayerDetailView: View {
                         MatchRowView(match: match, player: player)
                     }
                 }
-            } else if userModel.canWriteDate {
+            } else if userModel.canWriteData {
                 Text("The player's matches will display here! You can add a match by tapping + on the home page.")
                     .fontWeight(.medium)
                     .padding(.top)
@@ -130,7 +133,7 @@ struct PlayerDetailView: View {
         }
     }
     
-    var body: some View {
+    var content: some View {
         ZStack {
             VStack(alignment: .leading, spacing: 24) {
                 rankName
@@ -144,20 +147,49 @@ struct PlayerDetailView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            Menu {
-                Button {
-                    renaming = true
-                } label: {
-                    Label {
-                        Text("Rename")
-                    } icon: {
-                        Image(systemName: "pencil")
-                    }
+        .confirmationDialog("Delete Player?", isPresented: $showConfirmDelete) {
+            Button(role: .destructive) {
+                DispatchQueue.main.async {
+                    teamModel.deletePlayer(player)
+                    presentationMode.wrappedValue.dismiss()
                 }
             } label: {
-                Image(systemName: "ellipsis.circle")
+                Text("Delete")
             }
+        } message: {
+            Text("Are you sure you want to delete this player?")
+        }
+    }
+    
+    var body: some View {
+        if userModel.canWriteData {
+            content.toolbar {
+                Menu {
+                    Button {
+                        renaming = true
+                    } label: {
+                        Label {
+                            Text("Rename")
+                        } icon: {
+                            Image(systemName: "pencil")
+                        }
+                    }
+                    
+                    Button(role: .destructive) {
+                        showConfirmDelete = true
+                    } label: {
+                        Label {
+                            Text("Delete")
+                        } icon: {
+                            Image(systemName: "trash")
+                        }
+                    }
+                } label: {
+                    Image(systemName: "ellipsis.circle")
+                }
+            }
+        } else {
+            content
         }
         
         NavigationLink(isActive: $renaming) {
