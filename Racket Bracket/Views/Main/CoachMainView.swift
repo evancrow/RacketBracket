@@ -15,6 +15,7 @@ struct CoachMainView: View {
     @State var showNewChallengeMatchView = false
     @State var showNewRegularMatchView = false
     @State var showJoinCodeView = false
+    @State var showConfirmLogOut = false
     @State var showConfirmDeleteTeam = false
     
     var body: some View {
@@ -66,15 +67,7 @@ struct CoachMainView: View {
                             }
                         }
                         
-                        Button {
-                            userModel.logOut(teamModel: teamModel)
-                        } label: {
-                            Label {
-                                Text("Sign out of team")
-                            } icon: {
-                                Image(systemName: "eject")
-                            }
-                        }
+                        LogOutButton(showConfirmation: $showConfirmLogOut)
                         
                         Button(role: .destructive) {
                             showConfirmDeleteTeam = true
@@ -105,7 +98,11 @@ struct CoachMainView: View {
                 }
             } message: {
                 Text("Are you sure you want to delete this team?")
-            }
+            }.addLogOutConfirmation(
+                teamModel: teamModel,
+                userModel: userModel,
+                showConfirmation: $showConfirmLogOut
+            )
 
             if !showNewPlayerView && !showNewChallengeMatchView &&
                 !showNewRegularMatchView && !teamModel.showPlayerDetailView &&

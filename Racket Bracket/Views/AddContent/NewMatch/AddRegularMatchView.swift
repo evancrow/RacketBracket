@@ -41,6 +41,10 @@ struct AddRegularMatchView: View {
             RoundedButton(title: "Add Another Match") {
                 createMatchAndUpdateRanks()
                 
+                player = nil
+                partner = nil
+                isWinner = false
+                
                 winnerPoints = ""
                 loserPoints = ""
             }.disabled(!canContinue)

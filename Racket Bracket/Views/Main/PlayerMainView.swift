@@ -11,6 +11,8 @@ struct PlayerMainView: View {
     @EnvironmentObject var teamModel: TeamModel
     @EnvironmentObject var userModel: UserModel
     
+    @State var showConfirmLogOut = false
+    
     var userPlayerProfile: Player? {
         teamModel.players.first { $0.userId == userModel.currentUser?.id }
     }
@@ -33,21 +35,19 @@ struct PlayerMainView: View {
                         Text("Your code: \(id)")
                     }
                     
-                    Button {
-                        userModel.logOut(teamModel: teamModel)
-                    } label: {
-                        Label {
-                            Text("Sign out of team")
-                        } icon: {
-                            Image(systemName: "eject")
-                        }
-                    }
+                    LogOutButton(showConfirmation: $showConfirmLogOut)
                 } label: {
                     Image(systemName: "ellipsis")
                         .font(.title3)
                 }
             }
-        }.navigationViewStyle(.stack)
+        }
+        .navigationViewStyle(.stack)
+        .addLogOutConfirmation(
+            teamModel: teamModel,
+            userModel: userModel,
+            showConfirmation: $showConfirmLogOut
+        )
     }
 }
 

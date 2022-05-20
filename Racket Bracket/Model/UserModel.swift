@@ -38,6 +38,10 @@ class UserModel: DataStorable<User>, ObservableObject {
         return false
     }
     
+    var isCoach: Bool {
+        canWriteData
+    }
+    
     // MARK: - Create User
     public func createUser(type: UserType) {
         self.currentUser = User(id: Self.createUserId(), type: type)

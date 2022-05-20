@@ -11,6 +11,7 @@
 		2010E74227F57C50002DEA3E /* JoinCodeViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010E74127F57C50002DEA3E /* JoinCodeViews.swift */; };
 		2010E79D27E44DD700D736A0 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2010E79C27E44DD700D736A0 /* RoundedButton.swift */; };
 		202F719E27FB8CD500EC7F9F /* DoublesMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 202F719D27FB8CD500EC7F9F /* DoublesMatch.swift */; };
+		20494A4228381C0B0002B7E4 /* LogOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20494A4128381C0B0002B7E4 /* LogOut.swift */; };
 		2076BAA727E3D31A0032B942 /* PlayerRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2076BAA627E3D31A0032B942 /* PlayerRowView.swift */; };
 		2079FE0E27E43A0A00F2DF19 /* PlayerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079FE0D27E43A0A00F2DF19 /* PlayerListView.swift */; };
 		2079FE1127E43AEF00F2DF19 /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079FE1027E43AEF00F2DF19 /* AddButtonView.swift */; };
@@ -86,6 +87,7 @@
 		2010E74127F57C50002DEA3E /* JoinCodeViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinCodeViews.swift; sourceTree = "<group>"; };
 		2010E79C27E44DD700D736A0 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		202F719D27FB8CD500EC7F9F /* DoublesMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublesMatch.swift; sourceTree = "<group>"; };
+		20494A4128381C0B0002B7E4 /* LogOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOut.swift; sourceTree = "<group>"; };
 		2076BAA627E3D31A0032B942 /* PlayerRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerRowView.swift; sourceTree = "<group>"; };
 		2079FE0D27E43A0A00F2DF19 /* PlayerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListView.swift; sourceTree = "<group>"; };
 		2079FE1027E43AEF00F2DF19 /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				20AF10D727E4EC210081EC07 /* Checkbox.swift */,
+				20494A4128381C0B0002B7E4 /* LogOut.swift */,
 				20D023DC27EECDD1000FDEF0 /* ProgressBar.swift */,
 				20D023E627EEE5D0000FDEF0 /* RankChange.swift */,
 				2010E79C27E44DD700D736A0 /* RoundedButton.swift */,
@@ -363,8 +366,8 @@
 			isa = PBXGroup;
 			children = (
 				20F3C3A127F4CA6D00ADDC81 /* CoachMainView.swift */,
-				20F3C3A327F4CBEE00ADDC81 /* SignInView.swift */,
 				20F3C3A527F4CC0100ADDC81 /* PlayerMainView.swift */,
+				20F3C3A327F4CBEE00ADDC81 /* SignInView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -570,6 +573,7 @@
 				20D023DB27EEAEA6000FDEF0 /* PlayerDetailView.swift in Sources */,
 				207A41CC27E28E3000BAC1A1 /* Match.swift in Sources */,
 				20F3C39D27F4C36400ADDC81 /* User.swift in Sources */,
+				20494A4228381C0B0002B7E4 /* LogOut.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
