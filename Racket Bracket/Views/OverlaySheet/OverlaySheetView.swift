@@ -58,6 +58,7 @@ struct OverlaySheetView<Content: View>: View {
         VStack {
             Spacer()
                 .frame(height: spacerHeight)
+                .animation(.interactiveSpring(), value: spacerHeight)
             
             ZStack(alignment: .top) {
                 RoundedRectangle(cornerRadius: OverlaySheetUX.cornerRadius)
