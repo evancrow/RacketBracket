@@ -58,7 +58,7 @@ class TeamModel: ObservableObject {
         let filteredPlayers = playersRanked.filter { !excluding.contains($0) }
         
         if let filteringName = filteringName, !filteringName.isEmpty {
-            return filteredPlayers.filter { $0.fullName.contains(filteringName) }
+            return filteredPlayers.filter { $0.fullName.containsIgnoringCase(filteringName) }
         }
         
         return filteredPlayers

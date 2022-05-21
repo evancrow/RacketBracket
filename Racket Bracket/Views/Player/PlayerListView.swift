@@ -87,7 +87,7 @@ struct PlayerListView: View {
     private func updateFilteredPlayers() {
         DispatchQueue.main.async {
             filteredPlayers = teamModel.playersRanked.filter {
-                ($0.fullName.contains(nameFilter) || nameFilter.isEmpty || !selectMode) && !excluding.contains($0)
+                ($0.fullName.containsIgnoringCase(nameFilter) || nameFilter.isEmpty || !selectMode) && !excluding.contains($0)
             }
         }
     }

@@ -21,6 +21,7 @@
 		2079FE1A27E440D600F2DF19 /* ColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079FE1927E440D600F2DF19 /* ColorExtensions.swift */; };
 		2079FE1C27E4458200F2DF19 /* NewPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079FE1B27E4458200F2DF19 /* NewPlayerView.swift */; };
 		2079FE2027E4464900F2DF19 /* RoundedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2079FE1F27E4464900F2DF19 /* RoundedTextField.swift */; };
+		207A32102839906A0025A352 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A320F2839906A0025A352 /* StringExtensions.swift */; };
 		207A419627E28DCF00BAC1A1 /* Racket_BracketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A419527E28DCF00BAC1A1 /* Racket_BracketApp.swift */; };
 		207A419827E28DCF00BAC1A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 207A419727E28DCF00BAC1A1 /* ContentView.swift */; };
 		207A419A27E28DD000BAC1A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 207A419927E28DD000BAC1A1 /* Assets.xcassets */; };
@@ -97,6 +98,7 @@
 		2079FE1927E440D600F2DF19 /* ColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtensions.swift; sourceTree = "<group>"; };
 		2079FE1B27E4458200F2DF19 /* NewPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlayerView.swift; sourceTree = "<group>"; };
 		2079FE1F27E4464900F2DF19 /* RoundedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTextField.swift; sourceTree = "<group>"; };
+		207A320F2839906A0025A352 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		207A419227E28DCF00BAC1A1 /* Racket Bracket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Racket Bracket.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		207A419527E28DCF00BAC1A1 /* Racket_BracketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Racket_BracketApp.swift; sourceTree = "<group>"; };
 		207A419727E28DCF00BAC1A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 			children = (
 				2079FE1927E440D600F2DF19 /* ColorExtensions.swift */,
 				207A41C027E28E3000BAC1A1 /* IntExtensions.swift */,
+				207A320F2839906A0025A352 /* StringExtensions.swift */,
 				20AF10DD27E502F30081EC07 /* ViewExtensions.swift */,
 			);
 			path = Extensions;
@@ -542,6 +545,7 @@
 				2079FE1427E43B2100F2DF19 /* AddButtonUX.swift in Sources */,
 				2010E74227F57C50002DEA3E /* JoinCodeViews.swift in Sources */,
 				2079FE1627E43B2A00F2DF19 /* AddButtonConfig.swift in Sources */,
+				207A32102839906A0025A352 /* StringExtensions.swift in Sources */,
 				20B2E6BB27E6757300EE9120 /* SetScoreView.swift in Sources */,
 				2076BAA727E3D31A0032B942 /* PlayerRowView.swift in Sources */,
 				207A41CA27E28E3000BAC1A1 /* RankingModel.swift in Sources */,
@@ -731,7 +735,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"Racket Bracket/Preview Content\"";
 				DEVELOPMENT_TEAM = 659X72BL55;
 				ENABLE_PREVIEWS = YES;
@@ -761,7 +765,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 8;
+				CURRENT_PROJECT_VERSION = 9;
 				DEVELOPMENT_ASSET_PATHS = "\"Racket Bracket/Preview Content\"";
 				DEVELOPMENT_TEAM = 659X72BL55;
 				ENABLE_PREVIEWS = YES;

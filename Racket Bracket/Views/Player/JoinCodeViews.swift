@@ -13,7 +13,7 @@ struct JoinCodeViews: View {
     @State private var nameFilter = ""
     var filteredPlayers: [Player] {
         let allPlayers = teamModel.players.sorted { $0.fullName < $1.fullName }
-        return nameFilter.isEmpty ? allPlayers : allPlayers.filter { $0.fullName.contains(nameFilter) }
+        return nameFilter.isEmpty ? allPlayers : allPlayers.filter { $0.fullName.containsIgnoringCase(nameFilter) }
     }
     
     var body: some View {
