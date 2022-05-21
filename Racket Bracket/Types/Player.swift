@@ -102,7 +102,8 @@ extension Player {
             userId: UUID().uuidString,
             firstName: String(Int.random(in: 1...100)),
             lastName: String(Int.random(in: 1...10000)),
-            rank: Rank(value: Int.random(in: 1...10), rawScore: Int.random(in: 100...1000)),
+            rank: Rank(value: addMatch ? Int.random(in: 1...10) : 0,
+                       rawScore: addMatch ? Int.random(in: 100...1000) : PlayerDefaults.basePoints),
             matches: [])
         
         if addMatch {
