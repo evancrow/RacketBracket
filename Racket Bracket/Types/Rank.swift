@@ -21,12 +21,7 @@ class Rank: NSObject, ObservableObject {
             rawScore = rawScore.min(0)
         }
     }
-    
-    public func reset() {
-        rawScore = 0
-        value = 0
-    }
-    
+
     // MARK: - init
     init(value: Int, rawScore: Int) {
         self.value = value

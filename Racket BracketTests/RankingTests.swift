@@ -77,4 +77,21 @@ class RankingTests: BaseTest {
             XCTAssertTrue(player.rank.value == index + 1)
         }
     }
+    
+    func testPlayersWithNoGamesArentRanked() {
+        let (teamModel, rankingModel) = (createMockTeamModel(numberOfPlayers: 4), createMockRankingModel())
+        let firstPlayer = teamModel.players[0]
+        let secondPlayer = teamModel.players[1]
+        let thirdPlayer = teamModel.players[2]
+        let fourthPlayer = teamModel.players[3]
+        
+        // Create a match between player one and two.
+        rankingModel.updateRanks(
+            with: Match(winner: firstPlayer, loser: secondPlayer, matchType: .challenge, setScore: (8, 4)),
+            teamModel: teamModel)
+        
+        // Confirm only first two players have ranks.
+        XCTAssertEqual(thirdPlayer.rank.value, 0)
+        XCTAssertEqual(fourthPlayer.rank.value, 0)
+    }
 }

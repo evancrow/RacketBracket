@@ -13,7 +13,7 @@ class BaseTest: XCTestCase {
         let mockPlayers: [Player] = {
             var players = [Player]()
             for _ in 1...numberOfPlayers {
-                players.append(Player.mockPlayer())
+                players.append(Player.mockPlayer(addMatch: false))
             }
             
             return players
@@ -49,7 +49,7 @@ class BaseTest: XCTestCase {
         
         let rankings = teamModel.playersRanked
         for player in rankings {
-            print("Name:", player.fullName, "Rank:", player.rank.value, "Raw Score:", player.rank.rawScore)
+            print("Name:", player.fullName, "Rank:", player.rank.value, "Raw Score:", player.rank.rawScore, "Matches:", player.matches.count)
         }
         
         print("\n")
